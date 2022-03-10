@@ -19,6 +19,7 @@ REQUESTS_FIELDS = [
   { name: "Adresa / místo dodání", key: "adresa" },
   { name: "Telefon", key: "telefon" },
   { name: "Email", key: "email" },
+  { name: "Poznámka", key: "poznamka" },
   { name: "Rezervace", key: "rezervace" },
   { name: "Nabízí", key: "nabizi" },
   { name: "Předáno", key: "predano" }
