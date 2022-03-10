@@ -23,39 +23,145 @@
   <link href="https://cdn.jsdelivr.net/gh/bbscout/daruj-potrebne@main/css/style.css" rel="stylesheet">
   <style>
     h1,
-    h1 a:focus,
-    h1 a {
+    h1 a,
+    h1 a:focus {
       font-weight: 300;
       color: #47a0c7;
       text-transform: uppercase;
-      text-decoration: none;
+      text-decoration: none
     }
 
     h1 a:hover {
       text-decoration: none;
-      color: #4192b4;
-
+      color: #4192b4
     }
 
     a:hover {
-      text-decoration: none;
-
-
+      text-decoration: none
     }
 
     h2 {
-      font-size: 1.5rem;
+      font-size: 1.5rem
     }
 
     .form-control.no-validate:valid {
       border-color: #ced4da;
       padding-right: .75rem;
-      background: none;
+      background: 0 0
     }
 
     .form-select.no-validate:valid {
       border-color: #ced4da;
-      background-image: none!important;
+      background-image: none !important
+    }
+
+    .btn-check:focus+.btn-primary {
+      color: #fff;
+      background-color: #f5c508;
+      border-color: #cab218;
+      box-shadow: 0 0 0 .25rem rgb(49 132 253 / 50%)
+    }
+
+    .btn-success {
+      color: #fff;
+      background-color: #f5c508;
+      border-color: #cab218
+    }
+
+    .btn-check:focus+.btn-success,
+    .btn-success:focus {
+      color: #fff;
+      background-color: #f5c508;
+      border-color: #cab218;
+      box-shadow: 0 0 0 .25rem rgba(176, 148, 56, .5)
+    }
+
+    .btn-success:hover {
+      color: #fff;
+      background-color: #edbe02;
+      border-color: #cab218
+    }
+
+    body {
+      font-family: 'Work Sans', sans-serif
+    }
+
+    h1,
+    h1 a,
+    h1 a:focus {
+      font-weight: 300;
+      color: #47a0c7;
+      text-transform: uppercase;
+      text-decoration: none
+    }
+
+    h1 a:hover {
+      text-decoration: none;
+      color: #4192b4
+    }
+
+    a:hover {
+      text-decoration: none
+    }
+
+    h2 {
+      font-size: 1.5rem
+    }
+
+    .form-control:focus {
+      color: #212529;
+      background-color: #fff;
+      border-color: #92c6dc;
+      outline: 0;
+      box-shadow: 0 0 0 .25rem rgb(13 110 253 / 25%)
+    }
+
+    .form-check-input:checked {
+      background-color: #47a0c7;
+      border-color: #47a0c7
+    }
+
+    .was-validated .form-check-input:valid,
+    .was-validated .form-check-input:valid~.form-check-label {
+      color: #759830
+    }
+
+    .was-validated .form-check-input:valid {
+      border-color: #759830
+    }
+
+    .loga {
+      height: 80px;
+      opacity: .5;
+      transition: opacity .25s ease-in-out;
+      -moz-transition: opacity .25s ease-in-out;
+      -webkit-transition: opacity .25s ease-in-out
+    }
+
+    .loga:hover {
+      opacity: 1
+    }
+
+    .was-validated .invalid-feedback.show-feedback {
+      display: block
+    }
+
+    success:active:focus {
+      box-shadow: 0 0 0 .25rem rgba(255, 0, 200, .5)
+    }
+
+    .tab-content {
+      border-left: 1px solid #ddd;
+      border-right: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+      background-color: #fff;
+      padding: 10px;
+      -webkit-border-bottom-right-radius: 4px;
+      -webkit-border-bottom-left-radius: 4px;
+      -moz-border-radius-bottomright: 4px;
+      -moz-border-radius-bottomleft: 4px;
+      border-bottom-right-radius: 4px;
+      border-bottom-left-radius: 4px
     }
   </style>
 </head>
