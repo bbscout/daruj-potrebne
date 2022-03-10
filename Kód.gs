@@ -80,7 +80,7 @@ function appendData(data, sheetName, fields) {
     var item = data[i];
     item.datum = new Date();
     item.id = `${item.datum.getTime()}${Math.floor(Math.random() * 100)}`;
-    item.telefon = !item.phone ? item.phone : "'" + item.phone;
+    item.telefon = !item.telefon ? item.telefon : "'" + item.telefon;
     item.rezervace = `=COUNTIF('Nabídky'!$A$2:$A;"="&A${index})>0`;
     item.nabizi = `=IFNA(VLOOKUP(A${index};'Nabídky'!$A$2:$C;3;FALSE)&" "&VLOOKUP(A${index};'Nabídky'!$A$2:$E;4;FALSE);"")`;
 
