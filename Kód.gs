@@ -96,10 +96,12 @@ function appendData(data, sheetName, fields) {
 
 function addRequest(data) {
   appendData(data,REQUESTS_SHEET,REQUESTS_FIELDS);
+  return true
 }
 
 function addOffer(data) {
   appendData(data,OFFERS_SHEET,OFFERS_FIELDS);
+  return true
 }
 
 function getRequests() {

@@ -604,6 +604,7 @@
                           nabídnout</th>
                       </tr>
                     </thead>
+                    <tbody id="requests-tbody"></tbody>
                   </table>
                 </div>
               </div>
@@ -676,7 +677,7 @@
   <script>
     pocetVeci = 1;
 
-    google.script.run.withSuccessHandler(showRequests).getRequests();
+    updateRequests();
     google.script.run.withSuccessHandler(showPlaces).getPlaces();
 
     function showPlaces(data) {
@@ -702,9 +703,7 @@
         return template;
       }).join("\n");
 
-      var el = document.createElement("tbody");
-      el.innerHTML = data;
-      document.getElementById("requests").appendChild(el);
+      document.getElementById("requests-tbody").innerHTML = data;
     }
 
     function addRow() {
@@ -751,20 +750,29 @@
       }
 
       if (formId == "requests-form") {
-        google.script.run.withSuccessHandler(onSuccess('requests-success', form)).addRequest(data);
+        google.script.run
+          .withSuccessHandler(onSuccess('requests-success', form)) //Vyčistí formulář
+          .withSuccessHandler(updateRequests).withUserObject(this) //Aktualizuje data až po dokončení zápisu
+          .addRequest(data);
       } else if (formId == "offers-form") {
-        google.script.run.withSuccessHandler(onSuccess('offers-success', form)).addOffer(data);
+        google.script.run
+          .withSuccessHandler(onSuccess('offers-success', form)) //Vyčistí formulář
+          .withSuccessHandler(updateRequests).withUserObject(this) //Aktualizuje data až po dokončení zápisu
+          .addOffer(data);
       }
 
 
     }
 
-    function onSuccess(alertId, form) {
-      google.script.run.withSuccessHandler(showRequests).getRequests();
+    function onSuccess(alertId, form, timeout) {
       form.classList.remove('was-validated');
       form.reset();
       document.getElementById('dalsi-veci').innerHTML = '';
       document.getElementById(alertId).classList.add('show');
+    }
+
+    function updateRequests() {
+      google.script.run.withSuccessHandler(showRequests).getRequests();
     }
 
   </script>
