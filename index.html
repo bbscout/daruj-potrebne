@@ -26,7 +26,6 @@
     h1 a,
     h1 a:focus {
       font-weight: 300;
-      color: #47a0c7;
       text-transform: uppercase;
       text-decoration: none
     }
@@ -205,10 +204,22 @@
   </script>
   <div class="container">
     <main>
+      <div class="mt-5 col-md-10 offset-md-1 mb-3 text-center">
+      <form class="btn-group" role="group" aria-label="Basic radio toggle button group" id="lang-selection" onchange="translateAll()">
+          <input type="radio" class="btn-check" name="langSel" id="czech-translation" autocomplete="off" value="cs" checked>
+        <label class="btn btn-outline-primary" for="czech-translation">Česky</label>
+      
+        <input type="radio" class="btn-check" name="langSel" id="ukraine-translation" autocomplete="off" value="uk">
+        <label class="btn btn-outline-primary" for="ukraine-translation">український</label>
+      
+        <input type="radio" class="btn-check" name="langSel" id="english-translation" autocomplete="off" value="en">
+        <label class="btn btn-outline-primary" for="english-translation">English</label>
+      </form>
+    </div>
       <div class=" col-md-10 offset-md-1 mb-3 text-center">
         <img src="https://cdn.jsdelivr.net/gh/bbscout/daruj-potrebne@main/img/pozadi-ukrajina.jpg" class="img-fluid"
           alt="snímek vytištěné metodiky">
-        <h1><a href="index.html">Pro Ukrajinu</a></h1>
+        <h1 data-i18n-key="heading-1" class="text-primary">Pro Ukrajinu</h1>
         <h2>Hledám pomoc</h2>
         <p class="mb-3">
           Jste v nouzi, potřebujete pomoct? Chybí vám oblečení, vybavení domácnosti nebo jiné zařízení?
@@ -677,6 +688,51 @@
   </footer>
   </div>
   <script>
+    const translations = {
+      "cs": {
+        "heading-1": "Pro ukrajinu",
+      },
+      "uk": {
+        "heading-1": "Ukrajinský nadpis",
+      },
+      "en": {
+        "heading-1": "Help Ukraine",
+      },
+    };
+
+    document.addEventListener("DOMContentLoaded", () => {
+      document.forms["lang-selection"].langSel.value = getLang();
+      translateAll();
+    });
+
+    function translateAll() {
+      locale = document.forms["lang-selection"].langSel.value;
+      document
+        .querySelectorAll("[data-i18n-key]")
+        .forEach(translateElement);
+    }
+
+    function translateElement(element) {
+      const key = element.getAttribute("data-i18n-key");
+      const translation = translations[locale][key];
+      element.innerText = translation;
+    }
+
+    function getLang() {
+      var lang = "cs";
+      var supportedLang = ["cs","uk","en"];
+      var browserLang = "";
+      if (navigator.languages != undefined) {
+        browserLang = navigator.languages[0]; 
+      } else {
+        browserLang = navigator.language;
+      }
+      if ( supportedLang.includes(browserLang.substring(0,2)) ) {
+        lang = browserLang.substring(0,2);
+      }
+      return lang
+    }
+
     pocetVeci = 1;
 
     updateRequests();
