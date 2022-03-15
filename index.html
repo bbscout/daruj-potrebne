@@ -219,18 +219,18 @@
         <img src="https://cdn.jsdelivr.net/gh/bbscout/daruj-potrebne@main/img/pozadi-ukrajina.jpg" class="img-fluid"
           alt="snímek vytištěné metodiky">
         <h1 data-i18n-key="heading-1" class="text-primary">Pro Ukrajinu</h1>
-        <h2>Hledám pomoc</h2>
-        <p class="mb-3">
+        <h2 data-i18n-key="heading-2-request">Hledám pomoc</h2>
+        <p data-i18n-key="heading-2-request-desc" class="mb-3">
           Jste v nouzi, potřebujete pomoct? Chybí vám oblečení, vybavení domácnosti nebo jiné zařízení?
           Napište si o konkrétní věci. Pokusíme se Vám je zajistit. Stačí vyplnit formulář na záložce <strong>Pořebuji
             pomoc</strong>.
         </p>
-        <h2>Nabízím pomoc</h2>
-        <p class="mb-3">
+        <h2 data-i18n-key="heading-2-offer">Nabízím pomoc</h2>
+        <p data-i18n-key="heading-2-offer-desc" class="mb-3">
           Chcete darovat, ale nevíte co je potřeba? Náš systém funguje na základě poptávky. Poptávané věci najdete
           na záložce <strong>Nabízím pomoc</strong>.
         </p>
-        <p><strong>Pomáháme dobrovolně a zdarma! 💛</strong></p>
+        <p data-i18n-key="heading-2-free-desc"><strong>Pomáháme dobrovolně a zdarma! 💛</strong></p>
       </div>
 
 
@@ -241,10 +241,10 @@
           <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
             <button class="nav-link text-xs-center active" id="nav-potrebuji-tab" data-bs-toggle="tab"
               data-bs-target="#nav-potrebuji" type="button" role="tab" aria-controls="nav-potrebuji"
-              aria-selected="true"><i class="bi bi-question"></i> Potřebuji pomoc</button>
+              aria-selected="true" data-i18n-key="request-button"><i class="bi bi-question"></i> Potřebuji pomoc</button>
             <button class="nav-link text-xs-center" id="nav-nabizim-tab" data-bs-toggle="tab"
               data-bs-target="#nav-nabizim" style="margin-right: 1px;" type="button" role="tab"
-              aria-controls="nav-nabizim" aria-selected="false"><i class="bi bi-gift"></i> Nabízím pomoc</button>
+              aria-controls="nav-nabizim" aria-selected="false" data-i18n-key="offer-button"><i class="bi bi-gift"></i> Nabízím pomoc</button>
           </div>
         </nav>
 
@@ -254,7 +254,7 @@
 
             <p>
               <i class="bi bi-question-square"></i> <a data-bs-toggle="collapse" href="#collapse-nabidka" role="button" aria-expanded="false"
-                aria-controls="collapse-nabidka" class="link-secondary collapsed details">NÁVOD: Jak požádat o
+                aria-controls="collapse-nabidka" class="link-secondary collapsed details" data-i18n-key="request-howto">NÁVOD: Jak požádat o
                 pomoc?</a>
             </p>
 
@@ -263,21 +263,21 @@
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="accordion-nabidka-1-heading">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#accordion-nabidka-1" aria-expanded="false" aria-controls="accordion-nabidka-1">
+                      data-bs-target="#accordion-nabidka-1" aria-expanded="false" aria-controls="accordion-nabidka-1" data-i18n-key="request-howto-1-button">
                       1 | Zadejte vaše údaje
                     </button>
                   </h2>
                   <div id="accordion-nabidka-1" class="accordion-collapse collapse"
                     aria-labelledby="accordion-nabidka-1-heading" data-bs-parent="#accordion-nabidka">
                     <div class="accordion-body">
-                      <p>Vyplňte následující povinná pole:</p>
+                      <p data-i18n-key="request-howto-1-content-1">Vyplňte následující povinná pole:</p>
                       <ul><strong>
-                          <li>Jméno</li>
-                          <li>Příjmení</li>
-                          <li>Místo doručení</li>
+                          <li data-i18n-key="request-howto-1-content-2">Jméno</li>
+                          <li data-i18n-key="request-howto-1-content-3">Příjmení</li>
+                          <li data-i18n-key="request-howto-1-content-4">Místo doručení</li>
                         </strong>
                       </ul>
-                      <p>Pokud zadáte <strong>email</strong>, přijde Vám potvrzení, jakmile někdo na Vaši poptávku
+                      <p data-i18n-key="request-howto-1-content-5">Pokud zadáte <strong>email</strong>, přijde Vám potvrzení, jakmile někdo na Vaši poptávku
                         zareaguje. Pokud zadáte <strong>telefon</strong>, usnadníte tak kontakt osobě, která vám danou
                         věc nabídne.</p>
                     </div>
@@ -286,14 +286,14 @@
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="accordion-nabidka-2-heading">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#accordion-nabidka-2" aria-expanded="false" aria-controls="accordion-nabidka-2">
+                      data-bs-target="#accordion-nabidka-2" aria-expanded="false" aria-controls="accordion-nabidka-2" data-i18n-key="request-howto-2-button">
                       2 | Napište, co potřebujete
                     </button>
                   </h2>
                   <div id="accordion-nabidka-2" class="accordion-collapse collapse"
                     aria-labelledby="accordion-nabidka-2-heading" data-bs-parent="#accordion-nabidka">
                     <div class="accordion-body">
-                      <p>
+                      <p data-i18n-key="request-howto-2-content-1">
                         Napište <strong>konkrétní věci</strong>, které potřebujete (u oblečení např. velikost). Pokud
                         potřebujete <strong>více věcí</strong>, vkládejte je jednotlivě <strong>na samostatné
                           řádky</strong>.
@@ -304,14 +304,14 @@
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="accordion-nabidka-3-heading">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#accordion-nabidka-3" aria-expanded="false" aria-controls="accordion-nabidka-3">
+                      data-bs-target="#accordion-nabidka-3" aria-expanded="false" aria-controls="accordion-nabidka-3" data-i18n-key="request-howto-3-button">
                       3 | Vyčkejte na kontakt
                     </button>
                   </h2>
                   <div id="accordion-nabidka-3" class="accordion-collapse collapse"
                     aria-labelledby="accordion-nabidka-3-heading" data-bs-parent="#accordion-nabidka">
                     <div class="accordion-body">
-                      <p>
+                      <p data-i18n-key="request-howto-3-content-1">
                         Jakmile seženeme to, co potřebujete, <strong>ozveme se vám na zadaný email nebo
                           telefon</strong>. <strong>Pokud jste
                           kontakt neuvedli,
@@ -319,7 +319,7 @@
                         věci
                         nedostanete od jedné osoby nebo ve stejný čas.
                       </p>
-                      <p>Věci, které sháníte, se Vám pokusíme sehnat. Mějte prosím na paměti, že <strong>jsme skautští
+                      <p data-i18n-key="request-howto-3-content-2">Věci, které sháníte, se Vám pokusíme sehnat. Mějte prosím na paměti, že <strong>jsme skautští
                           dobrovolníci</strong>. Potřebné věci sháníme mezi skauty a veřejností. Pokud se Vám neozveme,
                         pravděpodobně
                         jsme zatím nic nesehnali.</p>
@@ -329,7 +329,7 @@
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="accordion-nabidka-4-heading">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#accordion-nabidka-4" aria-expanded="false" aria-controls="accordion-nabidka-4">
+                      data-bs-target="#accordion-nabidka-4" aria-expanded="false" aria-controls="accordion-nabidka-4" data-i18n-key="request-howto-4-button">
                       4 | Předání věcí
                     </button>
                   </h2>
@@ -689,15 +689,55 @@
   <script>
     const translations = {
       "cs": {
-        "heading-1": "Pro ukrajinu",
+        "heading-1": "Pro Ukrajinu",
+        "heading-2-request": "Hledám pomoc",
+        "heading-2-request-desc": " Jste v nouzi, potřebujete pomoct? Chybí vám oblečení, vybavení domácnosti nebo jiné zařízení? Napište si o konkrétní věci. Pokusíme se Vám je zajistit. Stačí vyplnit formulář na záložce <strong>Pořebuji pomoc</strong>. ",
+        "heading-2-offer": "Nabízím pomoc",
+        "heading-2-offer-desc": " Chcete darovat, ale nevíte co je potřeba? Náš systém funguje na základě poptávky. Poptávané věci najdete na záložce <strong>Nabízím pomoc</strong>. ",
+        "heading-2-free-desc": "<strong>Pomáháme dobrovolně a zdarma! 💛</strong>",
+        "request-button": "<i class=\"bi bi-question\"></i> Potřebuji pomoc",
+        "offer-button": "<i class=\"bi bi-gift\"></i> Nabízím pomoc",
+        "request-howto": "NÁVOD: Jak požádat o pomoc?",
+        "request-howto-1-button": " 1 | Zadejte vaše údaje ",
+        "request-howto-1-content-1": "Vyplňte následující povinná pole:",
+        "request-howto-1-content-2": "Jméno",
+        "request-howto-1-content-3": "Příjmení",
+        "request-howto-1-content-4": "Místo doručení",
+        "request-howto-1-content-5": "Pokud zadáte <strong>email</strong>, přijde Vám potvrzení, jakmile někdo na Vaši poptávku zareaguje. Pokud zadáte <strong>telefon</strong>, usnadníte tak kontakt osobě, která vám danou věc nabídne.",
+        "request-howto-2-button": " 2 | Napište, co potřebujete ",
+        "request-howto-2-content-1": " Napište <strong>konkrétní věci</strong>, které potřebujete (u oblečení např. velikost). Pokud potřebujete <strong>více věcí</strong>, vkládejte je jednotlivě <strong>na samostatné řádky</strong>. ",
+        "request-howto-3-button": " 3 | Vyčkejte na kontakt ",
+        "request-howto-3-content-1": " Jakmile seženeme to, co potřebujete, <strong>ozveme se vám na zadaný email nebo telefon</strong>. <strong>Pokud jste kontakt neuvedli, pokusíme se předat požadované věci na uvedeném místě</strong>. Je možné, že všechny poptávané věci nedostanete od jedné osoby nebo ve stejný čas. ",
+        "request-howto-3-content-2": "Věci, které sháníte, se Vám pokusíme sehnat. Mějte prosím na paměti, že <strong>jsme skautští dobrovolníci</strong>. Potřebné věci sháníme mezi skauty a veřejností. Pokud se Vám neozveme, pravděpodobně jsme zatím nic nesehnali.",
+        "request-howto-4-button": " 4 | Předání věcí "
       },
       "uk": {
-        "heading-1": "Ukrajinský nadpis",
+        "heading-1": "За Україну",
+        "heading-2-request": "Шукаю допомоги",
+        "heading-2-request-desc": "Ви потребуєте, потребуєте допомоги?  Вам не вистачає одягу, побутової техніки чи іншого обладнання?  Пишіть про конкретні речі.  Ми постараємося надати їх вам.  Просто заповніть форму на вкладці <strong> Мені потрібна допомога </strong>.",
+        "heading-2-offer": "пропоную допомогу",
+        "heading-2-offer-desc": "Хочете пожертвувати, але не знаєте, що для цього потрібно?  Наша система працює на вимогу.  Ви можете знайти запитані запитання на вкладці <strong> Я пропоную допомогу </strong>.",
+        "heading-2-free-desc": "<strong> Допомагаємо добровільно та безкоштовно!  💛 </strong>",
+        "request-button": "<i class=\"bi bi-question \"> </i> Мені потрібна допомога",
+        "offer-button": "<i class=\"bi bi-gift \"> </i> Я пропоную допомогу",
+        "request-howto": "ІНСТРУКЦІЯ: Як попросити допомоги?",
+        "request-howto-1-button": "1 | Введіть свої дані",
+        "request-howto-1-content-1": "Заповніть наступні обов'язкові поля:",
+        "request-howto-1-content-2": "Ім'я",
+        "request-howto-1-content-3": "Прізвище",
+        "request-howto-1-content-4": "Місце поставки",
+        "request-howto-1-content-5": "Якщо ви введете <strong> електронну адресу </strong>, ви отримаєте підтвердження, щойно хтось відповість на ваш запит.  Якщо ввести <strong> телефон </strong>, людині, яка пропонує вам, буде легше зв’язатися з нами.",
+        "request-howto-2-button": "2 | Пишіть, що вам потрібно",
+        "request-howto-2-content-1": "Напишіть <strong> конкретні речі </strong>, які вам потрібні (наприклад, одяг).  Якщо вам потрібно <strong> більше речей </strong>, вставте їх окремо <strong> в окремі рядки </strong>.",
+        "request-howto-3-button": "3 | Чекайте на зв'язок",
+        "request-howto-3-content-1": "Щойно ми отримаємо те, що вам потрібно, <strong> ми зв’яжемося з вами за допомогою електронної пошти або телефону, які ви ввели </strong>.  <strong> Якщо ви не вказали контакт, ми спробуємо передати запитані елементи у вказане місцезнаходження </strong>.  Цілком можливо, що ви отримаєте не всі запитані товари від однієї особи або одночасно.",
+        "request-howto-3-content-2": "Ми постараємося знайти для вас те, що ви шукаєте.  Зауважте, що <strong> ми скаутські волонтери </strong>.  Шукаємо необхідні речі серед скаутів та громадськості.  Якщо ми не зв’яжемося з вами, можливо, ми ще нічого не знайшли.",
+        "request-howto-4-button": "4 | Здача речей"
       },
       "en": {
         "heading-1": "Help Ukraine",
       },
-    };
+    }; 
 
     document.addEventListener("DOMContentLoaded", () => {
       document.forms["lang-selection"].langSel.value = getLang();
@@ -714,7 +754,9 @@
     function translateElement(element) {
       const key = element.getAttribute("data-i18n-key");
       const translation = translations[locale][key];
-      element.innerText = translation;
+      if (translation) {
+        element.innerHTML = translation;
+      }
     }
 
     function getLang() {
