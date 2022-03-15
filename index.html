@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap" rel="stylesheet">
-  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"> -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
   <link href="https://cdn.jsdelivr.net/gh/bbscout/daruj-potrebne@main/css/style.css" rel="stylesheet">
   <style>
     h1,
@@ -42,6 +42,10 @@
 
     h2 {
       font-size: 1.5rem
+    }
+
+    h3 {
+      font-size: 1.2rem
     }
 
     .form-control.no-validate:valid {
@@ -163,6 +167,16 @@
       border-bottom-right-radius: 4px;
       border-bottom-left-radius: 4px
     }
+
+    a.details.collapsed:after {
+      content: ' ▾';
+      width: 15px;
+    }
+
+    a.details:after {
+      content: ' ▴';
+      width: 15px;
+    }
   </style>
 </head>
 
@@ -191,43 +205,20 @@
         <img src="https://cdn.jsdelivr.net/gh/bbscout/daruj-potrebne@main/img/pozadi-ukrajina.jpg" class="img-fluid"
           alt="snímek vytištěné metodiky">
         <h1><a href="index.html">Pro Ukrajinu</a></h1>
-        <h2>Nebojte si říct o pomoc, nebo darujte konkrétní věci, které někdo potřebuje...</h2><br>
+        <h2>Nebojte si říct o pomoc, nebo darujte konkrétní věci, které někdo potřebuje... 💗 Jsme tu proto, abychom si pomáhali.</h2><br>
+        <h3>Hledám pomoc</h3>
         <p class="mb-3">
           Jste v nouzi a potřebujete pomoct? Utekli jste před válečným konfliktem a chybí vám oblečení, vybavení
           domácnosti nebo jiné zařízení?
-          Nebojte se říct si o pomoc. Jsme tu od toho, abychom vám ji zprostředkovali. A nemusí jít ani o maličkosti.
-          Někdo rád daruje použitý mobil,
-          jiný zase koupí plenky pro miminko. Stačí vyplnit formulář na záložce Potřebuji pomoc a my vám jí zkusíme
-          najít. Jsme tu proto, abychom si pomáhali.
+          Napište si o konkrétní věci. Pokusíme se Vám je zajistit. Stačí vyplnit formulář na záložce <strong>Pořebuji
+            pomoc</strong>.
         </p>
+        <h3>Nabízím pomoc</h3>
         <p class="mb-3">
           Chcete darovat, ale nevíte co je potřeba? Podívejte se níže... Náš systém funguje na základě poptávky a
           nabídky. Poptávané věci najdete
-          na záložce nabízím pomoc. Přeškrtnuté položky už někdo nabídl, ale zatím jsme je nepředali. Můžete je klidně
-          zaškrtnout také a zvýšit šanci,
-          že daná věc skutečně naplní očekávání.
+          na záložce <strong>Nabízím pomoc</strong>.
         </p>
-        <p>
-
-          <a data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
-            aria-controls="collapseExample" class="link-secondary"> více o projektu</a>
-        </p>
-      </div>
-      <div class=" col-md-10 offset-md-1 text-center">
-        <div class="collapse " id="collapseExample">
-          <div class="card card-body mb-5">
-            <p class="text-left mb-0"><small>
-                Když jsme se rozhodovali, jak se zapojit do pomoci Ukrajině, tak byla materiální sbírka jedním z prvních
-                nápadů. Jenže taková sbírka je
-                jednak logisticky velmi náročná a jednak často pomůže lidem v dobré víře darovat věci, které už
-                nechtějí, ale které taky nikomu nepomohou.
-                Naším cílem bylo vytvořit sbírku, která cíleně pomůže lidem v nouzi najít to, co skutečně potřebují.
-              </small></p>
-            <p class="text-left mb-0"><small>
-                Pojďme to společně zkusit 💗.
-              </small></p>
-          </div>
-        </div>
       </div>
 
 
@@ -244,12 +235,114 @@
               aria-controls="nav-nabizim" aria-selected="false"><i class="bi bi-gift"></i> Nabízím pomoc</button>
           </div>
         </nav>
+
         <div class="tab-content" id="nav-tabContent">
           <div class="m-3 tab-pane fade show active" id="nav-potrebuji" role="tabpanel"
             aria-labelledby="nav-potrebuji-tab">
 
+            <p>
+              <a data-bs-toggle="collapse" href="#collapse-nabidka" role="button" aria-expanded="false"
+                aria-controls="collapse-nabidka" class="link-secondary collapsed details">NÁVOD: Jak požádat o
+                pomoc?</a>
+            </p>
+
+            <div class="collapse mb-3" id="collapse-nabidka">
+              <div class="accordion" id="accordion-nabidka">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="accordion-nabidka-1-heading">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#accordion-nabidka-1" aria-expanded="false" aria-controls="accordion-nabidka-1">
+                      1 | Zadejte vaše údaje
+                    </button>
+                  </h2>
+                  <div id="accordion-nabidka-1" class="accordion-collapse collapse"
+                    aria-labelledby="accordion-nabidka-1-heading" data-bs-parent="#accordion-nabidka">
+                    <div class="accordion-body">
+                      <p>Vyplňte následující povinná pole:</p>
+                      <ul><strong>
+                          <li>Jméno</li>
+                          <li>Příjmení</li>
+                          <li>Místo doručení</li>
+                        </strong>
+                      </ul>
+                      <p>Pokud zadáte <strong>email</strong>, přijde Vám potvrzení, jakmile někdo na Vaši poptávku
+                        zareaguje. Pokud zadáte <strong>telefon</strong>, usnadníte tak kontakt osobě, která vám danou
+                        věc nabídne.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="accordion-nabidka-2-heading">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#accordion-nabidka-2" aria-expanded="false" aria-controls="accordion-nabidka-2">
+                      2 | Napište, co potřebujete
+                    </button>
+                  </h2>
+                  <div id="accordion-nabidka-2" class="accordion-collapse collapse"
+                    aria-labelledby="accordion-nabidka-2-heading" data-bs-parent="#accordion-nabidka">
+                    <div class="accordion-body">
+                      <p>
+                        Napište <strong>konkrétní věci</strong>, které potřebujete (u oblečení např. velikost). Pokud
+                        potřebujete <strong>více věcí</strong>, vkládejte je jednotlivě <strong>na samostatné
+                          řádky</strong>.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="accordion-nabidka-3-heading">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#accordion-nabidka-3" aria-expanded="false" aria-controls="accordion-nabidka-3">
+                      3 | Vyčkejte na kontakt
+                    </button>
+                  </h2>
+                  <div id="accordion-nabidka-3" class="accordion-collapse collapse"
+                    aria-labelledby="accordion-nabidka-3-heading" data-bs-parent="#accordion-nabidka">
+                    <div class="accordion-body">
+                      <p>
+                        Jakmile seženeme to, co potřebujete, <strong>ozveme se vám na zadaný email nebo
+                          telefon</strong>. <strong>Pokud jste
+                          kontakt neuvedli,
+                          pokusíme se předat požadované věci na uvedeném místě</strong>. Je možné, že všechny poptávané
+                        věci
+                        nedostanete od jedné osoby nebo ve stejný čas.
+                      </p>
+                      <p>Věci, které sháníte, se Vám pokusíme sehnat. Mějte prosím na paměti, že <strong>jsme skautští
+                          dobrovolníci</strong>. Potřebné věci sháníme mezi skauty a veřejností. Pokud se Vám neozveme,
+                        pravděpodobně
+                        jsme zatím nic nesehnali.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="accordion-nabidka-4-heading">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#accordion-nabidka-4" aria-expanded="false" aria-controls="accordion-nabidka-4">
+                      4 | Předání věcí
+                    </button>
+                  </h2>
+                  <div id="accordion-nabidka-4" class="accordion-collapse collapse"
+                    aria-labelledby="accordion-nabidka-4-heading" data-bs-parent="#accordion-nabidka">
+                    <div class="accordion-body">
+                      <p>
+                        Místo předání závisí na vaší volbě ve formuláři:</p>
+                      <ul>
+                        <li><strong>Předání na sběrném místě:</strong> Jakmile někdo nabídne potřebnou věc a předá ji na
+                          sběrné místo, ozve se Vám a vy se pro ni můžete v otvírací době zastavit. </li>
+                        <li><strong>Osobní předání:</strong></li>
+                        <ul>
+                          <li>Potřebné věci Vám předá ten, kdo je sám osobně nabídl.</li>
+                          <li>Potřebné věci Vám v pátek odpoledne odvezou skauti ze sběrného místa.</li>
+                        </ul>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <form class="needs-validation" id="requests-form">
-              <div class="row ">
+              <div class="row">
                 <div class="col-md-6 col-sm-12 mb-3">
                   <label for="Jméno" class="form-label"><i class="bi bi-person"></i> Jméno*</label>
                   <input type="text" class="form-control" name="jmeno" id="jmeno" placeholder="Jan" required>
@@ -340,7 +433,110 @@
 
 
           <div class="m-3 tab-pane fade" id="nav-nabizim" role="tabpanel" aria-labelledby="nav-nabizim-tab">
+            <p>
+              <a data-bs-toggle="collapse" href="#collapse-poptavka" role="button" aria-expanded="false"
+                aria-controls="collapse-poptavka" class="link-secondary collapsed details">NÁVOD: Jak nabídnout
+                pomoc?</a>
+            </p>
 
+            <div class="collapse mb-3" id="collapse-poptavka">
+              <div class="accordion" id="accordion-poptavka">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="accordion-poptavka-1-heading">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#accordion-poptavka-1" aria-expanded="false" aria-controls="accordion-poptavka-1">
+                      1 | Prohlédněte si, co je aktuálně potřeba
+                    </button>
+                  </h2>
+                  <div id="accordion-poptavka-1" class="accordion-collapse collapse"
+                    aria-labelledby="accordion-poptavka-1-heading" data-bs-parent="#accordion-poptavka">
+                    <div class="accordion-body">
+                      <p>
+                        Prohlédněte si, <strong>jaké konkrétní věci jsou aktuálně potřeba</strong>. Poptávané věci
+                        najdete níže v části
+                        <a href="#vsechny-poptavky" class="link-secondary">Označte vše, co můžete nabídnout</a>. Pokud
+                        můžete něco z uvedených věcí nabídnout, vyplňte následující formulář.
+                      </p>
+                      <p><input class="form-check-input" type="checkbox"> Tyto položky nám zatím nikdo nenabídl. Můžete být první.</p>
+                      <p><input class="form-check-input" type="checkbox"> <del>Přeškrtnuté položky</del> už někdo nabídl, ale zatím jsme je nepředali. Můžete je klidně
+                        zaškrtnout také a zvýšit šanci,
+                        že daná věc skutečně naplní očekávání.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="accordion-poptavka-2-heading">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#accordion-poptavka-2" aria-expanded="false" aria-controls="accordion-poptavka-2">
+                      2 | Zadejte vaše údaje
+                    </button>
+                  </h2>
+                  <div id="accordion-poptavka-2" class="accordion-collapse collapse"
+                    aria-labelledby="accordion-poptavka-2-heading" data-bs-parent="#accordion-poptavka">
+                    <div class="accordion-body">
+                      <p>Vyplňte následující povinná pole:</p>
+                      <ul><strong>
+                          <li>Jméno</li>
+                          <li>Příjmení</li>
+                          <li>Email</li>
+                          <li>Způsob předání</li>
+                          <li>Alespoň jednu věc, kterou můžete nabídnout</li>
+                        </strong>
+                      </ul>
+                      <p>Pokud vyplníte i <strong>telefon</strong>, usnadníte nám kontakt v případě problémů.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="accordion-poptavka-3-heading">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#accordion-poptavka-3" aria-expanded="false" aria-controls="accordion-poptavka-3">
+                      3 | Předání věcí
+                    </button>
+                  </h2>
+                  <div id="accordion-poptavka-3" class="accordion-collapse collapse"
+                    aria-labelledby="accordion-poptavka-3-heading" data-bs-parent="#accordion-poptavka">
+                    <div class="accordion-body">
+                      <p>
+                        Místo předání závisí na vaší volbě ve formuláři:</p>
+                      <ul>
+                        <li><strong>Předání na sběrném místě:</strong> Vybrané věci předejte prosím na sběrné místo do
+                          pátku do 14:00. My se je následně pokusíme doručit.</li>
+                        <li><strong>Osobní předání:</strong> Pokud uvedl poptávající kontaktní údaje, pokuste se s ním
+                          domluvit
+                          čas předání. Případně zkuste doručit na daném místě věci bez domluvy.</li>
+                      </ul>
+                      <p><strong></strong>Pokud je to jen trochu možné, vyberte prosím jako způsob předání osobní
+                        předání.</strong>
+                        Ušetříte tak čas spoustě dobrovolníků.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="accordion-poptavka-4-heading">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#accordion-poptavka-4" aria-expanded="false" aria-controls="accordion-poptavka-4">
+                      4 | Kontaktujte poptávajícího
+                    </button>
+                  </h2>
+                  <div id="accordion-poptavka-4" class="accordion-collapse collapse"
+                    aria-labelledby="accordion-poptavka-4-heading" data-bs-parent="#accordion-poptavka">
+                    <div class="accordion-body">
+                      <p>
+                        Na zadaný email vám přijde potvrení s detaily pro doručení (jméno, kontakt, adresa, poznámky).
+                        <strong>Kontaktujte prosím poptávajícího</strong> nejlépe na zadaném telefonním čísle (případně
+                        emailu) o způsobu doručení daných věcí. Pokud poptávající neuvedl žádný kontakt, zkuste rovnou
+                        přejít na bod č. 4 (Dodání) nebo nás kontaktujte.
+                      </p>
+                      <p>V emailu se dozvíte, jakým jazykem dotyčný komunikuje. Pro překlad zprávy do ukrajinštiny
+                        můžete použít např. <a href="https://translate.google.com/?sl=cs&tl=uk&op=translate"
+                          class="link-secondary" target="_blank">Google překladač</a>.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
             <form class="needs-validation" id="offers-form">
               <div class="row ">
@@ -361,18 +557,18 @@
               </div>
               <div class="row">
                 <div class="col-md-6 col-sm-12 mb-3">
-                  <label for="email" class="form-label"><i class="bi bi-envelope"></i> Email</label>
+                  <label for="email" class="form-label"><i class="bi bi-envelope"></i> Email*</label>
                   <input type="email" class="form-control no-validate" name="email" id="email"
-                    placeholder="vas@email.cz">
+                    placeholder="vas@email.cz" required>
                   <div class="invalid-feedback">
                     Prosíme, vložte emailovou adresu, ať vás můžeme kontaktovat.
                   </div>
                 </div>
 
                 <div class="col-md-6 col-sm-12 mb-3">
-                  <label for="telefon" class="form-label"><i class="bi bi-phone"></i> Telefon*</label>
+                  <label for="telefon" class="form-label"><i class="bi bi-phone"></i> Telefon</label>
                   <input type="text" class="form-control no-validate" name="telefon" id="telefon"
-                    placeholder="+420 123 456 789" required>
+                    placeholder="+420 123 456 789">
                   <div class="invalid-feedback">
                     Prosíme, vložte váš telefon, ať vás můžeme kontaktovat.
                   </div>
@@ -380,12 +576,12 @@
               </div>
               <div class="row">
                 <div class="col-12 mb-3">
-                  <label for="misto" class="form-label"><i class="bi bi-house"></i> Místo předání</label>
+                  <label for="misto" class="form-label"><i class="bi bi-house"></i> Způsob předání*</label>
                   <select class="form-select no-validate" aria-label="výběr místa" name="misto" id="misto" required>
                     <option disabled>Ups... tady chybí nějaké možnosti</option>
                   </select>
                   <div class="invalid-feedback">
-                    Prosíme, vyberte místo, kde nám předáte vybrané vybavení.
+                    Prosíme, vyberte způsob, jakým předáte vybrané vybavení.
                   </div>
                 </div>
 
@@ -404,7 +600,8 @@
                   <table class="table" id="requests">
                     <thead>
                       <tr>
-                        <th scope="col"><i class="bi bi-gift"></i> Nabízím následující vybavení</th>
+                        <th scope="col" id="vsechny-poptavky"><i class="bi bi-gift"></i> Označte vše, co můžete
+                          nabídnout</th>
                       </tr>
                     </thead>
                   </table>
@@ -423,7 +620,27 @@
 
 
       </div>
-
+      <div class="col-md-10 offset-md-1 text-center mt-3">
+        <p>
+          <a data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
+            aria-controls="collapseExample" class="link-secondary"> více o projektu</a>
+        </p>
+        <div class="collapse " id="collapseExample">
+          <div class="card card-body mb-5">
+            <p class="text-left mb-0"><small>
+                Když jsme se rozhodovali, jak se zapojit do pomoci Ukrajině, tak byla materiální sbírka jedním z
+                prvních
+                nápadů. Jenže taková sbírka je
+                jednak logisticky velmi náročná a jednak často pomůže lidem v dobré víře darovat věci, které už
+                nechtějí, ale které taky nikomu nepomohou.
+                Naším cílem bylo vytvořit sbírku, která cíleně pomůže lidem v nouzi najít to, co skutečně potřebují.
+              </small></p>
+            <p class="text-left mb-0"><small>
+                Pojďme to společně zkusit 💗.
+              </small></p>
+          </div>
+        </div>
+      </div>
 
 
 
@@ -458,6 +675,7 @@
   </div>
   <script>
     pocetVeci = 1;
+
     google.script.run.withSuccessHandler(showRequests).getRequests()
     google.script.run.withSuccessHandler(showPlaces).getPlaces();
 
@@ -467,7 +685,7 @@
         template += `<option>${row.adresa} (${row.otevreno})</option>`;
       })
 
-      console.log(template);
+      //console.log(template);
 
       document.getElementById("misto").innerHTML = template;
     }
@@ -535,7 +753,7 @@
       }
 
 
-      console.log(data);
+      //console.log(data);
 
       if (formId == "requests-form") {
         google.script.run.withSuccessHandler(onSuccess('requests-success', form)).addRequest(data);
@@ -552,7 +770,6 @@
       document.getElementById('dalsi-veci').innerHTML = '';
       document.getElementById(alertId).classList.add('show');
     }
-
 
   </script>
 </body>
