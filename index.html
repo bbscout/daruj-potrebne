@@ -336,15 +336,15 @@
                   <div id="accordion-nabidka-4" class="accordion-collapse collapse"
                     aria-labelledby="accordion-nabidka-4-heading" data-bs-parent="#accordion-nabidka">
                     <div class="accordion-body">
-                      <p>
+                      <p data-i18n-key="request-howto-4-content-1">
                         Místo předání závisí na vaší volbě ve formuláři:</p>
                       <ul>
-                        <li><strong>Předání na sběrném místě:</strong> Jakmile někdo nabídne potřebnou věc a předá ji na
+                        <li data-i18n-key="request-howto-4-content-2"><strong>Předání na sběrném místě:</strong> Jakmile někdo nabídne potřebnou věc a předá ji na
                           sběrné místo, ozve se Vám a vy se pro ni můžete v otvírací době zastavit. </li>
-                        <li><strong>Osobní předání:</strong></li>
+                        <li data-i18n-key="request-howto-4-content-3"><strong>Osobní předání:</strong></li>
                         <ul>
-                          <li>Potřebné věci Vám předá ten, kdo je sám osobně nabídl.</li>
-                          <li>Potřebné věci Vám v pátek odpoledne odvezou skauti ze sběrného místa.</li>
+                          <li data-i18n-key="request-howto-4-content-4">Potřebné věci Vám předá ten, kdo je sám osobně nabídl.</li>
+                          <li data-i18n-key="request-howto-4-content-5">Potřebné věci Vám v pátek odpoledne odvezou skauti ze sběrného místa.</li>
                         </ul>
                       </ul>
                     </div>
@@ -356,16 +356,16 @@
             <form class="needs-validation" id="requests-form">
               <div class="row">
                 <div class="col-md-6 col-sm-12 mb-3">
-                  <label for="Jméno" class="form-label"><i class="bi bi-person"></i> Jméno*</label>
+                  <label for="Jméno" class="form-label" data-i18n-key="request-form-firstname"><i class="bi bi-person"></i> Jméno*</label>
                   <input type="text" class="form-control" name="jmeno" id="jmeno" placeholder="Jan" required>
-                  <div class="invalid-feedback">
+                  <div class="invalid-feedback" data-i18n-key="request-form-firstname-feedback">
                     Prosíme, vyplňte vaše jméno.
                   </div>
                 </div>
                 <div class="col-md-6 col-sm-12 mb-3">
-                  <label for="Příjmení" class="form-label"><i class="bi bi-person"></i> Příjmení*</label>
+                  <label for="Příjmení" class="form-label" data-i18n-key="request-form-lastname"><i class="bi bi-person"></i> Příjmení*</label>
                   <input type="text" class="form-control" name="prijmeni" id="prijmeni" placeholder="Novák" required>
-                  <div class="invalid-feedback">
+                  <div class="invalid-feedback" data-i18n-key="request-form-lastname-feedback">
                     Prosíme, vyplňte vaše příjmení.
                   </div>
                 </div>
@@ -375,29 +375,29 @@
               </div>
               <div class="row">
                 <div class="col-md-6 col-sm-12 mb-3">
-                  <label for="email" class="form-label"><i class="bi bi-envelope"></i> Email</label>
+                  <label for="email" class="form-label" data-i18n-key="request-form-email"><i class="bi bi-envelope"></i> Email</label>
                   <input type="email" class="form-control no-validate" name="email" id="email"
                     placeholder="vas@email.cz">
-                  <div class="invalid-feedback">
+                  <div class="invalid-feedback" data-i18n-key="request-form-email-feedback">
                     Prosíme, vložte emailovou adresu, ať vás můžeme kontaktovat.
                   </div>
                 </div>
 
                 <div class="col-md-6 col-sm-12 mb-3">
-                  <label for="telefon" class="form-label"><i class="bi bi-phone"></i> Telefon</label>
+                  <label for="telefon" class="form-label" data-i18n-key="request-form-phone"><i class="bi bi-phone"></i> Telefon</label>
                   <input type="text" class="form-control no-validate" name="telefon" id="telefon"
                     placeholder="+420 123 456 789">
-                  <div class="invalid-feedback">
+                  <div class="invalid-feedback" data-i18n-key="request-form-phone-feedback">
                     Prosíme, vložte váš telefon, ať vás můžeme kontaktovat.
                   </div>
                 </div>
               </div>
               <div class="row">
                 <div class="col-12 mb-3">
-                  <label for="adresa" class="form-label"><i class="bi bi-house"></i> Adresa doručení*</label>
+                  <label for="adresa" class="form-label" data-i18n-key="request-form-address"><i class="bi bi-house"></i> Adresa doručení*</label>
                   <input type="text" class="form-control" name="adresa" id="adresa" placeholder="Květinková 35, Plzeň"
                     required>
-                  <div class="invalid-feedback">
+                  <div class="invalid-feedback" data-i18n-key="request-form-address-feedback">
                     Prosíme, vyplňte adresu nebo místo, kde vám předáme potřebné vybavení.
                   </div>
                 </div>
@@ -405,7 +405,7 @@
               </div>
               <div class="row">
                 <div class="col-12 mb-3">
-                  <label for="poznamka" class="form-label"><i class="bi bi-pencil"></i> Poznámka</label>
+                  <label for="poznamka" class="form-label" data-i18n-key="request-form-note"><i class="bi bi-pencil"></i> Poznámka</label>
                   <textarea class="form-control no-validate" placeholder="Chcete nám ještě něco sdělit?" name="poznamka"
                     id="poznamka"></textarea>
                 </div>
@@ -414,10 +414,10 @@
               <hr class="my-4">
               <div class="row">
                 <div class="col-12 mb-3">
-                  <label for="vec" class="form-label"><i class="bi bi-gift"></i> Co potřebujete*</label>
+                  <label for="vec" class="form-label" data-i18n-key="request-form-thing"><i class="bi bi-gift"></i> Co potřebujete*</label>
                   <input type="text" class="form-control" name="vec-1" id="vec-1" placeholder="napište, co potřebujete"
                     required>
-                  <div class="invalid-feedback">
+                  <div class="invalid-feedback" data-i18n-key="request-form-thing-feedback">
                     Napište, prosím, alespoň jednu věc, kterou od nás potřebujete zajistit.
                   </div>
                 </div>
@@ -426,18 +426,18 @@
               </div>
               <div class="row">
                 <div class="col-12 mb-3">
-                  <button type="button" class="btn btn-success" onclick="addRow()"><i class="bi bi-plus-circle"></i>
+                  <button type="button" class="btn btn-success" onclick="addRow()" data-i18n-key="request-form-thing-add"><i class="bi bi-plus-circle"></i>
                     Přidat
                     řádek</button>
                 </div>
               </div>
               <hr class="my-4">
-              <button class="w-100 btn btn-success btn-lg" type="button" onclick="send('requests-form')">Odeslat <i
+              <button class="w-100 btn btn-success btn-lg" type="button" onclick="send('requests-form')" data-i18n-key="request-form-submit">Odeslat <i
                   class="bi bi-check2"></i></button>
             </form>
             <div class="alert alert-warning alert-dismissible fade collapse mt-3" id="requests-success">
               <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-              <strong>Váš požadavek byl úspěšně odeslán!</strong>
+              <strong data-i18n-key="request-form-success">Váš požadavek byl úspěšně odeslán!</strong>
             </div>
           </div>
 
@@ -447,7 +447,7 @@
           <div class="m-3 tab-pane fade" id="nav-nabizim" role="tabpanel" aria-labelledby="nav-nabizim-tab">
             <p>
               <i class="bi bi-question-square"></i> <a data-bs-toggle="collapse" href="#collapse-poptavka" role="button" aria-expanded="false"
-                aria-controls="collapse-poptavka" class="link-secondary collapsed details">NÁVOD: Jak nabídnout
+                aria-controls="collapse-poptavka" class="link-secondary collapsed details" data-i18n-key="offer-howto">NÁVOD: Jak nabídnout
                 pomoc?</a>
             </p>
 
@@ -456,21 +456,21 @@
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="accordion-poptavka-1-heading">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#accordion-poptavka-1" aria-expanded="false" aria-controls="accordion-poptavka-1">
+                      data-bs-target="#accordion-poptavka-1" aria-expanded="false" aria-controls="accordion-poptavka-1"  data-i18n-key="offer-howto-1-button">
                       1 | Prohlédněte si, co je aktuálně potřeba
                     </button>
                   </h2>
                   <div id="accordion-poptavka-1" class="accordion-collapse collapse"
                     aria-labelledby="accordion-poptavka-1-heading" data-bs-parent="#accordion-poptavka">
                     <div class="accordion-body">
-                      <p>
+                      <p data-i18n-key="offer-howto-1-content-1">
                         Prohlédněte si, <strong>jaké konkrétní věci jsou aktuálně potřeba</strong>. Poptávané věci
                         najdete níže v části
                         <a href="#vsechny-poptavky" class="link-secondary">Označte vše, co můžete nabídnout</a>. Pokud
                         můžete něco z uvedených věcí nabídnout, vyplňte následující formulář.
                       </p>
-                      <p><input class="form-check-input" type="checkbox"> Tyto položky nám zatím nikdo nenabídl. Můžete být první.</p>
-                      <p><input class="form-check-input" type="checkbox"> <del>Přeškrtnuté položky</del> už někdo nabídl, ale zatím jsme je nepředali. Můžete je klidně
+                      <p data-i18n-key="offer-howto-1-content-2"><input class="form-check-input" type="checkbox"> Tyto položky nám zatím nikdo nenabídl. Můžete být první.</p>
+                      <p data-i18n-key="offer-howto-1-content-3"><input class="form-check-input" type="checkbox"> <del>Přeškrtnuté položky</del> už někdo nabídl, ale zatím jsme je nepředali. Můžete je klidně
                         zaškrtnout také a zvýšit šanci,
                         že daná věc skutečně naplní očekávání.
                       </p>
@@ -480,46 +480,46 @@
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="accordion-poptavka-2-heading">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#accordion-poptavka-2" aria-expanded="false" aria-controls="accordion-poptavka-2">
+                      data-bs-target="#accordion-poptavka-2" aria-expanded="false" aria-controls="accordion-poptavka-2" data-i18n-key="offer-howto-2-button">
                       2 | Zadejte vaše údaje
                     </button>
                   </h2>
                   <div id="accordion-poptavka-2" class="accordion-collapse collapse"
                     aria-labelledby="accordion-poptavka-2-heading" data-bs-parent="#accordion-poptavka">
                     <div class="accordion-body">
-                      <p>Vyplňte následující povinná pole:</p>
+                      <p data-i18n-key="offer-howto-2-content-1">Vyplňte následující povinná pole:</p>
                       <ul><strong>
-                          <li>Jméno</li>
-                          <li>Příjmení</li>
-                          <li>Email</li>
-                          <li>Způsob předání</li>
-                          <li>Alespoň jednu věc, kterou můžete nabídnout</li>
+                          <li data-i18n-key="offer-howto-2-content-2">Jméno</li>
+                          <li data-i18n-key="offer-howto-2-content-3">Příjmení</li>
+                          <li data-i18n-key="offer-howto-2-content-4">Email</li>
+                          <li data-i18n-key="offer-howto-2-content-5">Způsob předání</li>
+                          <li data-i18n-key="offer-howto-2-content-6">Alespoň jednu věc, kterou můžete nabídnout</li>
                         </strong>
                       </ul>
-                      <p>Pokud vyplníte i <strong>telefon</strong>, usnadníte nám kontakt v případě problémů.</p>
+                      <p data-i18n-key="offer-howto-2-content-7">Pokud vyplníte i <strong>telefon</strong>, usnadníte nám kontakt v případě problémů.</p>
                     </div>
                   </div>
                 </div>
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="accordion-poptavka-3-heading">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#accordion-poptavka-3" aria-expanded="false" aria-controls="accordion-poptavka-3">
+                      data-bs-target="#accordion-poptavka-3" aria-expanded="false" aria-controls="accordion-poptavka-3" data-i18n-key="offer-howto-3-button">
                       3 | Předání věcí
                     </button>
                   </h2>
                   <div id="accordion-poptavka-3" class="accordion-collapse collapse"
                     aria-labelledby="accordion-poptavka-3-heading" data-bs-parent="#accordion-poptavka">
                     <div class="accordion-body">
-                      <p>
+                      <p data-i18n-key="offer-howto-3-content-1">
                         Místo předání závisí na vaší volbě ve formuláři:</p>
                       <ul>
-                        <li><strong>Předání na sběrném místě:</strong> Vybrané věci předejte prosím na sběrné místo do
+                        <li data-i18n-key="offer-howto-3-content-2"><strong>Předání na sběrném místě:</strong> Vybrané věci předejte prosím na sběrné místo do
                           pátku do 14:00. My se je následně pokusíme doručit.</li>
-                        <li><strong>Osobní předání:</strong> Pokud uvedl poptávající kontaktní údaje, pokuste se s ním
+                        <li data-i18n-key="offer-howto-3-content-3"><strong>Osobní předání:</strong> Pokud uvedl poptávající kontaktní údaje, pokuste se s ním
                           domluvit
                           čas předání. Případně zkuste doručit na daném místě věci bez domluvy.</li>
                       </ul>
-                      <p><strong></strong>Pokud je to jen trochu možné, vyberte prosím jako způsob předání osobní
+                      <p data-i18n-key="offer-howto-3-content-4"><strong></strong>Pokud je to jen trochu možné, vyberte prosím jako způsob předání osobní
                         předání.</strong>
                         Ušetříte tak čas spoustě dobrovolníků.</p>
                     </div>
@@ -528,20 +528,20 @@
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="accordion-poptavka-4-heading">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#accordion-poptavka-4" aria-expanded="false" aria-controls="accordion-poptavka-4">
+                      data-bs-target="#accordion-poptavka-4" aria-expanded="false" aria-controls="accordion-poptavka-4" data-i18n-key="offer-howto-4-button">
                       4 | Kontaktujte poptávajícího
                     </button>
                   </h2>
                   <div id="accordion-poptavka-4" class="accordion-collapse collapse"
                     aria-labelledby="accordion-poptavka-4-heading" data-bs-parent="#accordion-poptavka">
                     <div class="accordion-body">
-                      <p>
+                      <p data-i18n-key="offer-howto-4-content-1">
                         Na zadaný email vám přijde potvrení s detaily pro doručení (jméno, kontakt, adresa, poznámky).
                         <strong>Kontaktujte prosím poptávajícího</strong> nejlépe na zadaném telefonním čísle (případně
                         emailu) o způsobu doručení daných věcí. Pokud poptávající neuvedl žádný kontakt, zkuste rovnou
                         přejít na bod č. 4 (Dodání) nebo nás kontaktujte.
                       </p>
-                      <p>V emailu se dozvíte, jakým jazykem dotyčný komunikuje. Pro překlad zprávy do ukrajinštiny
+                      <p data-i18n-key="offer-howto-4-content-2">V emailu se dozvíte, jakým jazykem dotyčný komunikuje. Pro překlad zprávy do ukrajinštiny
                         můžete použít např. <a href="https://translate.google.com/?sl=cs&tl=uk&op=translate"
                           class="link-secondary" target="_blank">Google překladač</a>.</p>
                     </div>
@@ -553,46 +553,46 @@
             <form class="needs-validation" id="offers-form">
               <div class="row ">
                 <div class="col-md-6 col-sm-12 mb-3">
-                  <label for="Jméno" class="form-label"><i class="bi bi-person"></i> Jméno*</label>
+                  <label for="Jméno" class="form-label" data-i18n-key="offer-form-firstname"><i class="bi bi-person"></i> Jméno*</label>
                   <input type="text" class="form-control" name="jmeno" id="jmeno" placeholder="Jan" required>
-                  <div class="invalid-feedback">
+                  <div class="invalid-feedback" data-i18n-key="offer-form-firstname-feedback">
                     Prosíme, vyplňte vaše jméno.
                   </div>
                 </div>
                 <div class="col-md-6 col-sm-12 mb-3">
-                  <label for="Příjmení" class="form-label"><i class="bi bi-person"></i> Příjmení*</label>
+                  <label for="Příjmení" class="form-label" data-i18n-key="offer-form-lastname"><i class="bi bi-person"></i> Příjmení*</label>
                   <input type="text" class="form-control" name="prijmeni" id="prijmeni" placeholder="Novák" required>
-                  <div class="invalid-feedback">
+                  <div class="invalid-feedback" data-i18n-key="offer-form-lastname-feedback">
                     Prosíme, vyplňte vaše příjmení.
                   </div>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-6 col-sm-12 mb-3">
-                  <label for="email" class="form-label"><i class="bi bi-envelope"></i> Email*</label>
+                  <label for="email" class="form-label" data-i18n-key="offer-form-email"><i class="bi bi-envelope"></i> Email*</label>
                   <input type="email" class="form-control no-validate" name="email" id="email"
                     placeholder="vas@email.cz" required>
-                  <div class="invalid-feedback">
+                  <div class="invalid-feedback" data-i18n-key="offer-form-email-feedback">
                     Prosíme, vložte emailovou adresu, ať vás můžeme kontaktovat.
                   </div>
                 </div>
 
                 <div class="col-md-6 col-sm-12 mb-3">
-                  <label for="telefon" class="form-label"><i class="bi bi-phone"></i> Telefon</label>
+                  <label for="telefon" class="form-label" data-i18n-key="offer-form-phone"><i class="bi bi-phone"></i> Telefon</label>
                   <input type="text" class="form-control no-validate" name="telefon" id="telefon"
                     placeholder="+420 123 456 789">
-                  <div class="invalid-feedback">
+                  <div class="invalid-feedback" data-i18n-key="offer-form-phone-feedback">
                     Prosíme, vložte váš telefon, ať vás můžeme kontaktovat.
                   </div>
                 </div>
               </div>
               <div class="row">
                 <div class="col-12 mb-3">
-                  <label for="misto" class="form-label"><i class="bi bi-house"></i> Způsob předání*</label>
+                  <label for="misto" class="form-label" data-i18n-key="offer-form-place"><i class="bi bi-house"></i> Způsob předání*</label>
                   <select class="form-select no-validate" aria-label="výběr místa" name="misto" id="misto" required>
-                    <option disabled>Ups... tady chybí nějaké možnosti</option>
+                    <option disabled data-i18n-key="offer-form-place-defoption">Ups... tady chybí nějaké možnosti</option>
                   </select>
-                  <div class="invalid-feedback">
+                  <div class="invalid-feedback" data-i18n-key="offer-form-place-feedback">
                     Prosíme, vyberte způsob, jakým předáte vybrané vybavení.
                   </div>
                 </div>
@@ -600,7 +600,7 @@
               </div>
               <div class="row">
                 <div class="col-12 mb-3">
-                  <label for="poznamka" class="form-label"><i class="bi bi-pencil"></i> Poznámka</label>
+                  <label for="poznamka" class="form-label" data-i18n-key="offer-form-note"><i class="bi bi-pencil"></i> Poznámka</label>
                   <textarea class="form-control no-validate" placeholder="Chcete nám ještě něco sdělit?" name="poznamka"
                     id="poznamka"></textarea>
                 </div>
@@ -612,7 +612,7 @@
                   <table class="table" id="requests">
                     <thead>
                       <tr>
-                        <th scope="col" id="vsechny-poptavky"><i class="bi bi-gift"></i> Označte vše, co můžete
+                        <th scope="col" id="vsechny-poptavky" data-i18n-key="offer-form-offers"><i class="bi bi-gift"></i> Označte vše, co můžete
                           nabídnout</th>
                       </tr>
                     </thead>
@@ -620,12 +620,12 @@
                   </table>
                 </div>
               </div>
-              <button class="w-100 btn btn-success btn-lg" type="button" onclick="send('offers-form')">Odeslat <i
+              <button class="w-100 btn btn-success btn-lg" type="button" onclick="send('offers-form')" data-i18n-key="offer-form-submit">Odeslat <i
                   class="bi bi-check2"></i></button>
             </form>
             <div class="alert alert-warning alert-dismissible fade collapse mt-3" id="offers-success">
               <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-              <strong>Váš požadavek byl úspěšně odeslán!</strong>
+              <strong data-i18n-key="offer-form-success">Váš požadavek byl úspěšně odeslán!</strong>
             </div>
 
           </div>
@@ -636,11 +636,11 @@
       <div class="col-md-10 offset-md-1 text-center mt-3">
         <p>
           <a data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
-            aria-controls="collapseExample" class="link-secondary"> více o projektu</a>
+            aria-controls="collapseExample" class="link-secondary" data-i18n-key="about-project"> více o projektu</a>
         </p>
         <div class="collapse " id="collapseExample">
           <div class="card card-body mb-5">
-            <p class="text-left mb-0"><small>
+            <p class="text-left mb-0" data-i18n-key="about-project-detail-1"><small>
                 Když jsme se rozhodovali, jak se zapojit do pomoci Ukrajině, tak byla materiální sbírka jedním z
                 prvních
                 nápadů. Jenže taková sbírka je
@@ -648,7 +648,7 @@
                 nechtějí, ale které taky nikomu nepomohou.
                 Naším cílem bylo vytvořit sbírku, která cíleně pomůže lidem v nouzi najít to, co skutečně potřebují.
               </small></p>
-            <p class="text-left mb-0"><small>
+            <p class="text-left mb-0" data-i18n-key="about-project-detail-2"><small>
                 Pojďme to společně zkusit 💗.
               </small></p>
           </div>
@@ -661,7 +661,7 @@
       <div class="col-sm-10 offset-sm-1 pt-3">
         <div class="row">
           <div class="col-sm-12 col-md-12 text-center">
-            <p class="text-muted pt-3"><small>Za podpory:</small></p>
+            <p class="text-muted pt-3" data-i18n-key="support"><small>Za podpory:</small></p>
             <div class="row">
               <div class="col-sm-12 py-3">
                 <a href="https://www.skaut.cz" target="_blank" title="Skaut"><img
@@ -678,10 +678,10 @@
     </main>
   </div>
   <footer class="my-5 text-muted text-center text-small">
-    <p class="mb-2"><small>Váš prohlížeč může ukládat tzv. <a href="https://cs.wikipedia.org/wiki/HTTP_cookie"
+    <p class="mb-2" data-i18n-key="cookies"><small>Váš prohlížeč může ukládat tzv. <a href="https://cs.wikipedia.org/wiki/HTTP_cookie"
           class="link-secondary" target=_blank>cookies</a> soubory, nicméně tento web s nimi nijak aktivně
         nepracuje.</small></p>
-    <p class="mb-1"><small>S 💙💛 vytvořili <a href="https://ctverak.cz" target="_blank"
+    <p class="mb-1" data-i18n-key="created-by"><small>S 💙💛 vytvořili <a href="https://ctverak.cz" target="_blank"
           class="link-secondary">Martin</a> a <a href="https://atelierkrejsa.cz" target="_blank"
           class="link-secondary">Břéťa</a> © 2022</small></p>
   </footer>
@@ -709,33 +709,236 @@
         "request-howto-3-button": " 3 | Vyčkejte na kontakt ",
         "request-howto-3-content-1": " Jakmile seženeme to, co potřebujete, <strong>ozveme se vám na zadaný email nebo telefon</strong>. <strong>Pokud jste kontakt neuvedli, pokusíme se předat požadované věci na uvedeném místě</strong>. Je možné, že všechny poptávané věci nedostanete od jedné osoby nebo ve stejný čas. ",
         "request-howto-3-content-2": "Věci, které sháníte, se Vám pokusíme sehnat. Mějte prosím na paměti, že <strong>jsme skautští dobrovolníci</strong>. Potřebné věci sháníme mezi skauty a veřejností. Pokud se Vám neozveme, pravděpodobně jsme zatím nic nesehnali.",
-        "request-howto-4-button": " 4 | Předání věcí "
+        "request-howto-4-button": " 4 | Předání věcí ",
+        "request-howto-4-content-1": " Místo předání závisí na vaší volbě ve formuláři:",
+        "request-howto-4-content-2": "<strong>Předání na sběrném místě:</strong> Jakmile někdo nabídne potřebnou věc a předá ji na sběrné místo, ozve se Vám a vy se pro ni můžete v otvírací době zastavit. ",
+        "request-howto-4-content-3": "<strong>Osobní předání:</strong>",
+        "request-howto-4-content-4": "Potřebné věci Vám předá ten, kdo je sám osobně nabídl.",
+        "request-howto-4-content-5": "Potřebné věci Vám v pátek odpoledne odvezou skauti ze sběrného místa.",
+        "request-form-firstname": "<i class=\"bi bi-person\"></i> Jméno*",
+        "request-form-firstname-feedback": " Prosíme, vyplňte vaše jméno. ",
+        "request-form-lastname": "<i class=\"bi bi-person\"></i> Příjmení*",
+        "request-form-lastname-feedback": " Prosíme, vyplňte vaše příjmení. ",
+        "request-form-email": "<i class=\"bi bi-envelope\"></i> Email",
+        "request-form-email-feedback": " Prosíme, vložte emailovou adresu, ať vás můžeme kontaktovat. ",
+        "request-form-phone": "<i class=\"bi bi-phone\"></i> Telefon",
+        "request-form-phone-feedback": " Prosíme, vložte váš telefon, ať vás můžeme kontaktovat. ",
+        "request-form-address": "<i class=\"bi bi-house\"></i> Adresa doručení*",
+        "request-form-address-feedback": " Prosíme, vyplňte adresu nebo místo, kde vám předáme potřebné vybavení. ",
+        "request-form-note": "<i class=\"bi bi-pencil\"></i> Poznámka",
+        "request-form-thing": "<i class=\"bi bi-gift\"></i> Co potřebujete*",
+        "request-form-thing-feedback": " Napište, prosím, alespoň jednu věc, kterou od nás potřebujete zajistit. ",
+        "request-form-thing-add": "<i class=\"bi bi-plus-circle\"></i> Přidat řádek",
+        "request-form-submit": "Odeslat <i class=\"bi bi-check2\"></i>",
+        "request-form-success": "Váš požadavek byl úspěšně odeslán!",
+        "offer-howto": "NÁVOD: Jak nabídnout pomoc?",
+        "offer-howto-1-button": " 1 | Prohlédněte si, co je aktuálně potřeba ",
+        "offer-howto-1-content-1": " Prohlédněte si, <strong>jaké konkrétní věci jsou aktuálně potřeba</strong>. Poptávané věci najdete níže v části <a href=\"#vsechny-poptavky\" class=\"link-secondary\">Označte vše, co můžete nabídnout</a>. Pokud můžete něco z uvedených věcí nabídnout, vyplňte následující formulář. ",
+        "offer-howto-1-content-2": "<input class=\"form-check-input\" type=\"checkbox\"> Tyto položky nám zatím nikdo nenabídl. Můžete být první.",
+        "offer-howto-1-content-3": "<input class=\"form-check-input\" type=\"checkbox\"> <del>Přeškrtnuté položky</del> už někdo nabídl, ale zatím jsme je nepředali. Můžete je klidně zaškrtnout také a zvýšit šanci, že daná věc skutečně naplní očekávání. ",
+        "offer-howto-2-button": " 2 | Zadejte vaše údaje ",
+        "offer-howto-2-content-1": "Vyplňte následující povinná pole:",
+        "offer-howto-2-content-2": "Jméno",
+        "offer-howto-2-content-3": "Příjmení",
+        "offer-howto-2-content-4": "Email",
+        "offer-howto-2-content-5": "Způsob předání",
+        "offer-howto-2-content-6": "Alespoň jednu věc, kterou můžete nabídnout",
+        "offer-howto-2-content-7": "Pokud vyplníte i <strong>telefon</strong>, usnadníte nám kontakt v případě problémů.",
+        "offer-howto-3-button": " 3 | Předání věcí ",
+        "offer-howto-3-content-1": " Místo předání závisí na vaší volbě ve formuláři:",
+        "offer-howto-3-content-2": "<strong>Předání na sběrném místě:</strong> Vybrané věci předejte prosím na sběrné místo do pátku do 14:00. My se je následně pokusíme doručit.",
+        "offer-howto-3-content-3": "<strong>Osobní předání:</strong> Pokud uvedl poptávající kontaktní údaje, pokuste se s ním domluvit čas předání. Případně zkuste doručit na daném místě věci bez domluvy.",
+        "offer-howto-3-content-4": "<strong></strong>Pokud je to jen trochu možné, vyberte prosím jako způsob předání osobní předání. Ušetříte tak čas spoustě dobrovolníků.",
+        "offer-howto-4-button": " 4 | Kontaktujte poptávajícího ",
+        "offer-howto-4-content-1": " Na zadaný email vám přijde potvrení s detaily pro doručení (jméno, kontakt, adresa, poznámky). <strong>Kontaktujte prosím poptávajícího</strong> nejlépe na zadaném telefonním čísle (případně emailu) o způsobu doručení daných věcí. Pokud poptávající neuvedl žádný kontakt, zkuste rovnou přejít na bod č. 4 (Dodání) nebo nás kontaktujte. ",
+        "offer-howto-4-content-2": "V emailu se dozvíte, jakým jazykem dotyčný komunikuje. Pro překlad zprávy do ukrajinštiny můžete použít např. <a href=\"https://translate.google.com/?sl=cs&amp;tl=uk&amp;op=translate\" class=\"link-secondary\" target=\"_blank\">Google překladač</a>.",
+        "offer-form-firstname": "<i class=\"bi bi-person\"></i> Jméno*",
+        "offer-form-firstname-feedback": " Prosíme, vyplňte vaše jméno. ",
+        "offer-form-lastname": "<i class=\"bi bi-person\"></i> Příjmení*",
+        "offer-form-lastname-feedback": " Prosíme, vyplňte vaše příjmení. ",
+        "offer-form-email": "<i class=\"bi bi-envelope\"></i> Email*",
+        "offer-form-email-feedback": " Prosíme, vložte emailovou adresu, ať vás můžeme kontaktovat. ",
+        "offer-form-phone": "<i class=\"bi bi-phone\"></i> Telefon",
+        "offer-form-phone-feedback": " Prosíme, vložte váš telefon, ať vás můžeme kontaktovat. ",
+        "offer-form-place": "<i class=\"bi bi-house\"></i> Způsob předání*",
+        "offer-form-place-defoption": "Ups... tady chybí nějaké možnosti",
+        "offer-form-place-feedback": " Prosíme, vyberte způsob, jakým předáte vybrané vybavení. ",
+        "offer-form-note": "<i class=\"bi bi-pencil\"></i> Poznámka",
+        "offer-form-offers": "<i class=\"bi bi-gift\"></i> Označte vše, co můžete nabídnout",
+        "offer-form-submit": "Odeslat <i class=\"bi bi-check2\"></i>",
+        "offer-form-success": "Váš požadavek byl úspěšně odeslán!",
+        "about-project": " více o projektu",
+        "about-project-detail-1": "<small> Když jsme se rozhodovali, jak se zapojit do pomoci Ukrajině, tak byla materiální sbírka jedním z prvních nápadů. Jenže taková sbírka je jednak logisticky velmi náročná a jednak často pomůže lidem v dobré víře darovat věci, které už nechtějí, ale které taky nikomu nepomohou. Naším cílem bylo vytvořit sbírku, která cíleně pomůže lidem v nouzi najít to, co skutečně potřebují. </small>",
+        "about-project-detail-2": "<small> Pojďme to společně zkusit 💗. </small>",
+        "support": "<small>Za podpory:</small>",
       },
       "uk": {
-        "heading-1": "За Україну",
-        "heading-2-request": "Шукаю допомоги",
-        "heading-2-request-desc": "Ви потребуєте, потребуєте допомоги?  Вам не вистачає одягу, побутової техніки чи іншого обладнання?  Пишіть про конкретні речі.  Ми постараємося надати їх вам.  Просто заповніть форму на вкладці <strong> Мені потрібна допомога </strong>.",
-        "heading-2-offer": "пропоную допомогу",
-        "heading-2-offer-desc": "Хочете пожертвувати, але не знаєте, що для цього потрібно?  Наша система працює на вимогу.  Ви можете знайти запитані запитання на вкладці <strong> Я пропоную допомогу </strong>.",
-        "heading-2-free-desc": "<strong> Допомагаємо добровільно та безкоштовно!  💛 </strong>",
-        "request-button": "<i class=\"bi bi-question \"> </i> Мені потрібна допомога",
-        "offer-button": "<i class=\"bi bi-gift \"> </i> Я пропоную допомогу",
-        "request-howto": "ІНСТРУКЦІЯ: Як попросити допомоги?",
-        "request-howto-1-button": "1 | Введіть свої дані",
+        "heading-1": "Для України",
+        "heading-2-request": "Я шукаю допомоги",
+        "heading-2-request-desc": " Ви потребуєте, вам потрібна допомога? Чи не вистачає одягу, побутового обладнання або іншого обладнання? Напишіть для конкретних речей. Ми постараємося забезпечити вас. Просто заповніть форму на вкладці <strong> Febbuje Help </strong>.",
+        "heading-2-offer": "Я пропоную допомогу",
+        "heading-2-offer-desc": " Ви хочете пожертвувати, але ви не знаєте, що потрібно? Наша система працює над попитом. Ви можете знайти необхідні речі на вкладці <strong> довідки </strong>.",
+        "heading-2-free-desc": "<strong> Ми допомагаємо добровільно і безкоштовно! 💛 </strong>",
+        "request-button": "<i class=\"bi bi-question\"></i> Мені потрібна допомога",
+        "offer-button": "<i class=\"bi bi-gift\"></i> я пропоную допомогу",
+        "request-howto": "Інструкції: Як подати заявку на допомогу?",
+        "request-howto-1-button": " 1 | Введіть дані",
         "request-howto-1-content-1": "Заповніть наступні обов'язкові поля:",
-        "request-howto-1-content-2": "Ім'я",
+        "request-howto-1-content-2": "Назва",
         "request-howto-1-content-3": "Прізвище",
         "request-howto-1-content-4": "Місце поставки",
-        "request-howto-1-content-5": "Якщо ви введете <strong> електронну адресу </strong>, ви отримаєте підтвердження, щойно хтось відповість на ваш запит.  Якщо ввести <strong> телефон </strong>, людині, яка пропонує вам, буде легше зв’язатися з нами.",
-        "request-howto-2-button": "2 | Пишіть, що вам потрібно",
-        "request-howto-2-content-1": "Напишіть <strong> конкретні речі </strong>, які вам потрібні (наприклад, одяг).  Якщо вам потрібно <strong> більше речей </strong>, вставте їх окремо <strong> в окремі рядки </strong>.",
-        "request-howto-3-button": "3 | Чекайте на зв'язок",
-        "request-howto-3-content-1": "Щойно ми отримаємо те, що вам потрібно, <strong> ми зв’яжемося з вами за допомогою електронної пошти або телефону, які ви ввели </strong>.  <strong> Якщо ви не вказали контакт, ми спробуємо передати запитані елементи у вказане місцезнаходження </strong>.  Цілком можливо, що ви отримаєте не всі запитані товари від однієї особи або одночасно.",
-        "request-howto-3-content-2": "Ми постараємося знайти для вас те, що ви шукаєте.  Зауважте, що <strong> ми скаутські волонтери </strong>.  Шукаємо необхідні речі серед скаутів та громадськості.  Якщо ми не зв’яжемося з вами, можливо, ми ще нічого не знайшли.",
-        "request-howto-4-button": "4 | Здача речей"
+        "request-howto-1-content-5": "Якщо ви вводите <strong> Електронна пошта </strong>, ви будете підтверджені, коли хтось реагує на ваш попит. Якщо ви вводите <strong> Телефон </strong>, ви будете контактувати з людиною, яка запропонує вам.",
+        "request-howto-2-button": " 2 | Напишіть, що вам потрібно",
+        "request-howto-2-content-1": " Напишіть <strong> Специфічні речі </strong> Вам потрібно (для розміру одягу). Якщо вам потрібно <strong> більше речей </strong>, вставте їх окремо <strong> на окремі лінії </strong>.",
+        "request-howto-3-button": " 3 | Дочекайтеся контакту",
+        "request-howto-3-content-1": " Одного разу ми можемо зробити те, що вам потрібно, <strong> ми почуємо вас у вказаній електронній пошті або телефону </strong>. <strong> Якщо ви не звернулися до контакту, ми спробуємо передати необхідні речі в цьому місці </strong>. Ви не можете отримати всі необхідні речі від однієї людини або одночасно.",
+        "request-howto-3-content-2": "Те, що ви шукаєте, ви спробуєте отримати вас. Зверніть увагу, що <strong> Ми - Volunteers Scout </strong>. Необхідні речі, які ми шукаємо між скаутами та громадськістю. Якщо ми не покажемо вам, ми, мабуть, нічого не зробили.",
+        "request-howto-4-button": " 4 | Передача речей",
+        "request-howto-4-content-1": " Місце передачі залежить від вашого вибору у формі:",
+        "request-howto-4-content-2": "<strong> Handover у точці збору: </strong> Після того, як хтось пропонує необхідну річ і передати його до пункту колекції, ви почуєте вас, і ви можете зупинити це за це.",
+        "request-howto-4-content-3": "<strong> Особиста передача: </strong>",
+        "request-howto-4-content-4": "Необхідні речі дадуть вам той, хто особисто запропонував їм.",
+        "request-howto-4-content-5": "Необхідні речі візьмуть вам розвідник з пункту колекції в п'ятницю.",
+        "request-form-firstname": "<i class=\"bi bi-person\"></i> Назва*",
+        "request-form-firstname-feedback": " Будь ласка, заповніть своє ім'я.",
+        "request-form-lastname": "<i class=\"bi bi-person\"></i> Прізвище*",
+        "request-form-lastname-feedback": " Будь ласка, заповніть своє прізвище.",
+        "request-form-email": "<i class=\"bi bi-envelope\"></i> Електронна пошта",
+        "request-form-email-feedback": " Вставте адресу електронної пошти, зв'яжіться з вами.",
+        "request-form-phone": "<i class=\"bi bi-phone\"></i> Телефон",
+        "request-form-phone-feedback": " Будь ласка, вставте телефон, зв'яжіться з вами.",
+        "request-form-address": "<i class=\"bi bi-house\"></i> Адреса доставки*",
+        "request-form-address-feedback": " Будь ласка, заповніть адресу або місце, щоб дати вам необхідне обладнання.",
+        "request-form-note": "<i class=\"bi bi-pencil\"></i> Примітка",
+        "request-form-thing": "<i class=\"bi bi-gift\"></i> Що вам потрібно*",
+        "request-form-thing-feedback": " Будь ласка, напишіть принаймні одну річ, яку потрібно забезпечити від нас.",
+        "request-form-thing-add": "<i class=\"bi bi-plus-circle\"></i> Додати рядок",
+        "request-form-submit": "Надіслати <i class=\"bi bi-check2\"></i>",
+        "request-form-success": "Ваш запит успішно відправлений!",
+        "offer-howto": "Інструкції: як запропонувати допомогу?",
+        "offer-howto-1-button": " 1 | Переглянути те, що потрібно",
+        "offer-howto-1-content-1": " Перегляд, <strong> Які конкретні речі зараз потрібні </strong>. Ви можете знайти затребувані речі нижче в <a href=\"#vsechny-poptavky\" class=\"link-secondary\"> все, що ви пропонуєте </a>. Якщо ви можете запропонувати щось з цих речей, заповніть наступну форму.",
+        "offer-howto-1-content-2": "<input class=\"form-check-input\" type=\"checkbox\"> Ці елементи ще не запропонували нам. Ви можете бути першим.",
+        "offer-howto-1-content-3": "<input class=\"form-check-input\" type=\"checkbox\"> <del> exciscrerched </del> елемент вже запропонував, але ми їх не давали. Ви також можете перевірити їх і збільшити шанс, що справа фактично виконує очікування.",
+        "offer-howto-2-button": " 2 | Введіть дані",
+        "offer-howto-2-content-1": "Заповніть наступні обов'язкові поля:",
+        "offer-howto-2-content-2": "Назва",
+        "offer-howto-2-content-3": "Прізвище",
+        "offer-howto-2-content-4": "Електронна пошта",
+        "offer-howto-2-content-5": "Метод передачі",
+        "offer-howto-2-content-6": "Принаймні одна річ, яку ви можете запропонувати",
+        "offer-howto-2-content-7": "Якщо ви заповнюєте <strong> Телефон </strong>, ви легко зв'яжетеся з нами у випадку проблем.",
+        "offer-howto-3-button": " 3 | Передача речей",
+        "offer-howto-3-content-1": " Місце передачі залежить від вашого вибору у формі:",
+        "offer-howto-3-content-2": "<strong> Обробка під час збору: </strong> Вибрані речі, будь ласка, перейдіть до пункту колекції до п'ятниці до 14:00. Потім ми спробуємо доставити.",
+        "offer-howto-3-content-3": "<strong> Особиста передача: </strong> Якщо він представив вимогливу контактну інформацію, спробуйте організувати час проходження з ним. Крім того, спробуйте доставити в певному місці без позбавлення.",
+        "offer-howto-3-content-4": "<strong> </strong> Якщо це трохи можливо, виберіть особистий метод передачі. Ви заощаджуєте багато добровольців.",
+        "offer-howto-4-button": " 4 | Зверніться до попиту",
+        "offer-howto-4-content-1": " Щоб по електронній пошті, ви ввели підтвердження з деталями для доставки (назва, контакт, адреса, нотатки). <strong> Будь ласка, зв'яжіться з вимогою </strong> Best на вказаному телефоні (або електронною поштою) про спосіб доставки речей. Якщо попит не зв'язався з будь-яким контактом, спробуйте прямо до пункту № 4 (доставка) або зв'язатися з нами.",
+        "offer-howto-4-content-2": "У повідомленні електронної пошти ви дізнаєтеся, як мова йде мова, яка повідомляє. Ви можете використовувати, наприклад, <a href=\"https://translate.google.com/?sl=cs&amp;tl=uk&amp;op=translate\" class=\"link-secondary\" target=\"_blank\"> Перекладач Google </a>.",
+        "offer-form-firstname": "<i class=\"bi bi-person\"></i> Назва*",
+        "offer-form-firstname-feedback": " Будь ласка, заповніть своє ім'я.",
+        "offer-form-lastname": "<i class=\"bi bi-person\"></i> Прізвище*",
+        "offer-form-lastname-feedback": " Будь ласка, заповніть своє прізвище.",
+        "offer-form-email": "<i class=\"bi-bi-envelope\"></i> Електронна пошта*",
+        "offer-form-email-feedback": " Вставте адресу електронної пошти, зв'яжіться з вами.",
+        "offer-form-phone": "<i class=\"bi bi-phone\"></i> Телефон",
+        "offer-form-phone-feedback": " Будь ласка, вставте телефон, зв'яжіться з вами.",
+        "offer-form-place": "<i class=\"bi bi-House\"></i> Метод передачі*",
+        "offer-form-place-defoption": "UPS ... Ось відсутні варіанти",
+        "offer-form-place-feedback": " Виберіть спосіб переходу до вибраного обладнання.",
+        "offer-form-note": "<i class=\"bi bi-pencil\"></i> Примітка",
+        "offer-form-offers": "<i class=\"bi bi-gift\"></i> Позначити все, що ви можете запропонувати",
+        "offer-form-submit": "Надіслати <i class=\"bi bi-check2\"></i>",
+        "offer-form-success": "Ваш запит успішно відправлений!",
+        "about-project": " Докладніше про проект",
+        "about-project-detail-1": "<small> Коли ми вирішили залучити за допомогою України, матеріальна колекція була однією з перших ідей. Але ця колекція як логістично дуже вимоглива, і часто допомагає людям добросовісно, ​​щоб пожертвувати речі, які більше не хочуть, але це також не допомагає нікому. Наша мета полягала у створенні колекції, яка допомагає людям, необхідним знайти те, що їм дійсно потрібно. </small>",
+        "about-project-detail-2": "<small> Давайте спробуємо це разом 💗. </small>",
+        "support": "<small> Для підтримки: </small>"
       },
       "en": {
-        "heading-1": "Help Ukraine",
+        "heading-1": "For Ukraine",
+        "heading-2-request": "I'm looking for help",
+        "heading-2-request-desc": " Are you in need, do you need help? Do you miss clothes, household equipment or other equipment? Write for specific things. We will try to ensure you. Just fill out the form on the <strong> Febuje Help </strong> tab.",
+        "heading-2-offer": "I offer assistance",
+        "heading-2-offer-desc": " Do you want to donate, but you don't know what is needed? Our system works on demand. You can find the demanded things on the <strong> tab of the </strong> help.",
+        "heading-2-free-desc": "<strong> We help voluntarily and free! 💛 </strong>",
+        "request-button": "<i class=\"bi bi-Question\"></ i> I need help",
+        "offer-button": "<i class=\"bi bi-Gift\"></ i> I offer help",
+        "request-howto": "Instructions: How to apply for help?",
+        "request-howto-1-button": " 1 | Enter your data",
+        "request-howto-1-content-1": "Fill in the following compulsory fields:",
+        "request-howto-1-content-2": "Name",
+        "request-howto-1-content-3": "Surname",
+        "request-howto-1-content-4": "Place of delivery",
+        "request-howto-1-content-5": "If you enter <strong> Email </strong>, you will be confirmed when someone responds to your demand. If you enter <strong> Phone </strong>, you will make a contact of the person that will offer you.",
+        "request-howto-2-button": " 2 | Write what you need",
+        "request-howto-2-content-1": " Write <strong> specific things </strong> you need (for clothing eg size). If you need <strong> More things </strong>, insert them individually <strong> on separate </strong> lines.",
+        "request-howto-3-button": " 3 | Wait for the contact",
+        "request-howto-3-content-1": " Once we can do what you need, <strong> We will hear you on the specified email or phone </strong>. <strong> If you did not contact the contact, we will try to pass the required things in that place </strong>. You may not get all the demanded things from one person or at the same time.",
+        "request-howto-3-content-2": "The things you are looking for you will try to get you. Please note that <strong> We are scout volunteers </strong>. The necessary things we are looking between scouts and the public. If we don't show you, we probably did nothing yet.",
+        "request-howto-4-button": " 4 | Handing down things",
+        "request-howto-4-content-1": " The place of handover depends on your choice in the form:",
+        "request-howto-4-content-2": "<strong> Handover at the collection point: </strong> Once someone offers the necessary thing and pass it to a collection point, you will hear you and you can stop it for it.",
+        "request-howto-4-content-3": "<strong> Personal handover: </strong>",
+        "request-howto-4-content-4": "The necessary things will give you the one who has personally offered them.",
+        "request-howto-4-content-5": "The necessary things will take you a scout from the collection point on Friday afternoon.",
+        "request-form-firstname": "<i class=\"bi bi-Person\"></i> name *",
+        "request-form-firstname-feedback": " Please fill in your name.",
+        "request-form-lastname": "<i class=\"bi bi-Person\"></i> Last name *",
+        "request-form-lastname-feedback": " Please fill in your last name.",
+        "request-form-email": "<i class=\"bi bi-Envelope\"></i> Email",
+        "request-form-email-feedback": " Please insert an email address, let's contact you.",
+        "request-form-phone": "<i class=\"bi bi-Phone\"></i> Phone",
+        "request-form-phone-feedback": " Please insert your phone, let's contact you.",
+        "request-form-address": "<i class=\"bi bi-HOUSE\"></I> Delivery Address *",
+        "request-form-address-feedback": " Please fill in the address or place to give you the necessary equipment.",
+        "request-form-note": "<i class=\"bi bi-Pencil\"></i> note",
+        "request-form-thing": "<i class=\"bi bi-Gift\"></i> What do you need *",
+        "request-form-thing-feedback": " Please write at least one thing you need to ensure from us.",
+        "request-form-thing-add": "<i class=\"bi bi-Plus-Circle\"></i> Add line",
+        "request-form-submit": "Send <i class=\"bi bi-CHECK2\"></i>",
+        "request-form-success": "Your request has been successfully sent!",
+        "offer-howto": "Instructions: How to offer help?",
+        "offer-howto-1-button": " 1 | View what is currently needed",
+        "offer-howto-1-content-1": " View, <strong> What specific things are currently needed </strong>. You can find the demanded things below in the <a href=\"#vsechny-poptavky\" class=\"link-secondary\"> All you offer </a>. If you can offer something of these things, fill out the following form.",
+        "offer-howto-1-content-2": "<input class=\"form-check-input\" type=\"checkbox\"> These items have not yet offered us. You can be first.",
+        "offer-howto-1-content-3": "<input class=\"form-check-input\" type=\"checkbox\"> <del> Exciscrerched </ del> item has already offered, but we did not give them. You can also check them down and increase the chance that the matter actually fulfills expectations.",
+        "offer-howto-2-button": " 2 | Enter your data",
+        "offer-howto-2-content-1": "Fill in the following compulsory fields:",
+        "offer-howto-2-content-2": "Name",
+        "offer-howto-2-content-3": "Surname",
+        "offer-howto-2-content-4": "E-mail",
+        "offer-howto-2-content-5": "The method of handing over",
+        "offer-howto-2-content-6": "At least one thing you can offer",
+        "offer-howto-2-content-7": "If you fill in <strong> Phone </strong>, you will easily contact us in case of problems.",
+        "offer-howto-3-button": " 3 | Handing down things",
+        "offer-howto-3-content-1": " The place of handover depends on your choice in the form:",
+        "offer-howto-3-content-2": "<strong> Handover at the collection point: </strong> Selected things Please pass on a collection point to Friday until 14:00. We will then try to deliver.",
+        "offer-howto-3-content-3": "<strong> Personal handover: </strong> If it introduced demanding contact information, try to arrange the passing time with it. Alternatively, try to deliver in a given place without deprivation.",
+        "offer-howto-3-content-4": "<strong> </strong> If it is just a bit possible, please select a personal handover method. You save a lot of volunteers.",
+        "offer-howto-4-button": " 4 | Contact the demand",
+        "offer-howto-4-content-1": " To email you entered you confirm with details for delivery (name, contact, address, notes). <strong> Please contact the demand of </strong> best on the specified telephone number (or email) about the method of delivery of the things. If the demand did not contact any contact, try straight to point no. 4 (delivery) or contact us.",
+        "offer-howto-4-content-2": "In the email, you will learn how the language in question communicates. You can use, for example, <a href=\"https://translate.google.com/?sl=cs&amp;tl=uk&amp;op=translate\" class=\"link-secondary\" target=\"_blank\"> Google translator </a>.",
+        "offer-form-firstname": "<i class=\"bi bi-Person\"></i> name *",
+        "offer-form-firstname-feedback": " Please fill in your name.",
+        "offer-form-lastname": "<i class=\"bi bi-Person\"></i> Last name *",
+        "offer-form-lastname-feedback": " Please fill in your last name.",
+        "offer-form-email": "<i class=\"bi bi-Envelope\"></i> Email *",
+        "offer-form-email-feedback": " Please insert an email address, let's contact you.",
+        "offer-form-phone": "<i class=\"bi bi-Phone\"></i> Phone",
+        "offer-form-phone-feedback": " Please insert your phone, let's contact you.",
+        "offer-form-place": "<i class=\"bi bi-house\">DMethod of handover *",
+        "offer-form-place-defoption": "UPS ... here's missing some options",
+        "offer-form-place-feedback": " Please select the way you pass to the selected equipment.",
+        "offer-form-note": "<i class=\"bi bi-Pencil\"></i> note",
+        "offer-form-offers": "<i class=\"bi bi-Gift\"></i> Mark all you can offer",
+        "offer-form-submit": "Send <i class=\"bi bi-check2\"></i>",
+        "offer-form-success": "Your request has been successfully sent!",
+        "about-project": " More about project",
+        "about-project-detail-1": "<Small> When we decided to engage in the help of Ukraine, the material collection was one of the first ideas. But that collection is both logistically very demanding and often help people in good faith to donate things that don't want anymore, but which also do not help anyone. Our goal was to create a collection that helps people in need to find what they really need. </ small>",
+        "about-project-detail-2": "<Small> Let's try it together 💗. </ small>",
+        "support": "<Small> for support: </ small>"
       },
     }; 
 
