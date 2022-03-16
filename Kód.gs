@@ -1,4 +1,4 @@
-GOOGLE_SHEET_ID = "1ejPmpiNUMiawfr4St9NNM1gGi1BFZbBvCXKxhDs9Umg"; //DOPLŇ UNIKÁTNÍ ID GOOGLE TABULKY (ta část URL mezi "d/" a "/edit" -> ".../d/{ID_TABULKY}/edit...")
+GOOGLE_SHEET_ID = "ID_GOOGLE_TABULKY"; //DOPLŇ UNIKÁTNÍ ID GOOGLE TABULKY (ta část URL mezi "d/" a "/edit" -> ".../d/{ID_TABULKY}/edit...")
 
 PLACES_SHEET = "Sběrná místa";
 PLACES_FIELDS = [
