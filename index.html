@@ -451,7 +451,7 @@
                 pomoc?</a>
             </p>
 
-            <div class="collapse mb-3" id="collapse-poptavka">
+            <div class="collapse mb-3 multiple-collapse-poptavka" id="collapse-poptavka">
               <div class="accordion" id="accordion-poptavka">
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="accordion-poptavka-1-heading">
@@ -507,7 +507,7 @@
                       3 | Předání věcí
                     </button>
                   </h2>
-                  <div id="accordion-poptavka-3" class="accordion-collapse collapse"
+                  <div id="accordion-poptavka-3" class="accordion-collapse collapse multiple-collapse-poptavka"
                     aria-labelledby="accordion-poptavka-3-heading" data-bs-parent="#accordion-poptavka">
                     <div class="accordion-body">
                       <p data-i18n-key="offer-howto-3-content-1">
@@ -522,6 +522,11 @@
                       <p data-i18n-key="offer-howto-3-content-4"><strong></strong>Pokud je to jen trochu možné, vyberte prosím jako způsob předání osobní
                         předání.</strong>
                         Ušetříte tak čas spoustě dobrovolníků.</p>
+                      <p data-i18n-key="offer-howto-3-content-5">
+                        <strong>SBĚRNÁ MÍSTA:</strong>
+                      </p>
+                      <div id="sberna-mista">
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -588,7 +593,7 @@
               </div>
               <div class="row">
                 <div class="col-12 mb-3">
-                  <label for="misto" class="form-label" data-i18n-key="offer-form-place"><i class="bi bi-house"></i> Způsob předání* <i class="bi bi-question-lg"></i></label>
+                  <label for="misto" class="form-label" data-i18n-key="offer-form-place"><i class="bi bi-house"></i> Způsob předání* <a href="#accordion-poptavka-3" data-bs-toggle="collapse" data-bs-target=".multiple-collapse-poptavka" aria-expanded="false" aria-controls="collapse-poptavka accordion-nabidka-3" data-i18n-key="offer-howto-3-button"><i class="bi bi-question-lg"></i></a></label>
                   <select class="form-select no-validate" aria-label="výběr místa" name="misto" id="misto" required>
                     <option disabled data-i18n-key="offer-form-place-defoption">Ups... tady chybí nějaké možnosti</option>
                   </select>
@@ -596,7 +601,6 @@
                     Prosíme, vyberte způsob, jakým předáte vybrané vybavení.
                   </div>
                 </div>
-
               </div>
               <div class="row">
                 <div class="col-12 mb-3">
@@ -761,7 +765,7 @@
         "offer-form-email-feedback": " Prosíme, vložte emailovou adresu, ať vás můžeme kontaktovat. ",
         "offer-form-phone": "<i class=\"bi bi-phone\"></i> Telefon",
         "offer-form-phone-feedback": " Prosíme, vložte váš telefon, ať vás můžeme kontaktovat. ",
-        "offer-form-place": "<i class=\"bi bi-house\"></i> Způsob předání* <i class=\"bi bi-question-lg\"></i>",
+        "offer-form-place": "<i class=\"bi bi-house\"></i> Způsob předání* <a href=\"#accordion-poptavka-3\" data-bs-toggle=\"collapse\" data-bs-target=\".multiple-collapse-poptavka\" aria-expanded=\"false\" aria-controls=\"collapse-poptavka accordion-nabidka-3\" data-i18n-key=\"offer-howto-3-button\"><i class=\"bi bi-question-lg\"></i></a>",
         "offer-form-place-defoption": "Ups... tady chybí nějaké možnosti",
         "offer-form-place-feedback": " Prosíme, vyberte způsob, jakým předáte vybrané vybavení. ",
         "offer-form-note": "<i class=\"bi bi-pencil\"></i> Poznámka",
@@ -846,7 +850,7 @@
         "offer-form-email-feedback": " Вставте адресу електронної пошти, зв'яжіться з вами.",
         "offer-form-phone": "<i class=\"bi bi-phone\"></i> Телефон",
         "offer-form-phone-feedback": " Будь ласка, вставте телефон, зв'яжіться з вами.",
-        "offer-form-place": "<i class=\"bi bi-house\"></i> Метод передачі* <i class=\"bi bi-question-lg\"></i>",
+        "offer-form-place": "<i class=\"bi bi-house\"></i> Метод передачі* <a href=\"#accordion-poptavka-3\" data-bs-toggle=\"collapse\" data-bs-target=\".multiple-collapse-poptavka\" aria-expanded=\"false\" aria-controls=\"collapse-poptavka accordion-nabidka-3\" data-i18n-key=\"offer-howto-3-button\"><i class=\"bi bi-question-lg\"></i></a>",
         "offer-form-place-defoption": "UPS ... Ось відсутні варіанти",
         "offer-form-place-feedback": " Виберіть спосіб переходу до вибраного обладнання.",
         "offer-form-note": "<i class=\"bi bi-pencil\"></i> Примітка",
@@ -931,7 +935,7 @@
         "offer-form-email-feedback": " Please insert an email address, let's contact you.",
         "offer-form-phone": "<i class=\"bi bi-phone\"></i> Phone",
         "offer-form-phone-feedback": " Please insert your phone, let's contact you.",
-        "offer-form-place": "<i class=\"bi bi-house\">Method of handover * <i class=\"bi bi-question-lg\"></i>",
+        "offer-form-place": "<i class=\"bi bi-house\">Method of handover * <a href=\"#accordion-poptavka-3\" data-bs-toggle=\"collapse\" data-bs-target=\".multiple-collapse-poptavka\" aria-expanded=\"false\" aria-controls=\"collapse-poptavka accordion-nabidka-3\" data-i18n-key=\"offer-howto-3-button\"><i class=\"bi bi-question-lg\"></i></a>",
         "offer-form-place-defoption": "UPS ... here's missing some options",
         "offer-form-place-feedback": " Please select the way you pass to the selected equipment.",
         "offer-form-note": "<i class=\"bi bi-pencil\"></i> note",
@@ -987,12 +991,27 @@
     google.script.run.withSuccessHandler(showPlaces).getPlaces();
 
     function showPlaces(data) {
+      var howtoTemplate = "";
+      data.forEach((row) => {
+        howtoTemplate += `
+        <p>
+          <strong>${row.nazev}</strong><br/>
+          <ul>
+            ${ row.otevreno ? "<li>" + row.otevreno + "</li>" : ""}
+            ${ row.adresa ? "<li>" + row.adresa + "</li>" : ""}
+          </ul>
+        </p>`;
+      })
+
+      document.getElementById("sberna-mista").innerHTML = howtoTemplate;
+
       var template = `<option selected disabled value="">Vyberte místo předání</option>`;
       data.forEach((row, i) => {
         template += `<option>${row.nazev} (${row.otevreno})</option>`;
       })
 
       document.getElementById("misto").innerHTML = template;
+
     }
 
     function showRequests(data) {
