@@ -394,6 +394,17 @@
               </div>
               <div class="row">
                 <div class="col-12 mb-3">
+                  <label for="request-misto" class="form-label" data-i18n-key="offer-form-place"><i class="bi bi-house"></i> Způsob převzetí*</label>
+                  <select onchange="test(this)" class="form-select no-validate" aria-label="výběr místa" id="request-misto" required>
+                    <option disabled data-i18n-key="offer-form-place-defoption">Ups... tady chybí nějaké možnosti</option>
+                  </select>
+                  <div class="invalid-feedback" data-i18n-key="offer-form-place-feedback">
+                    Prosíme, vyberte způsob, jakým předáte vybrané vybavení.
+                  </div>
+                </div>
+              </div>
+              <div class="row collapse" id="adresa-wrapper" aria-expanded="false">
+                <div class="col-12 mb-3">
                   <label for="adresa" class="form-label" data-i18n-key="request-form-address"><i class="bi bi-house"></i> Adresa doručení*</label>
                   <input type="text" class="form-control" name="adresa" id="adresa" placeholder="Květinková 35, Plzeň"
                     required>
@@ -1005,13 +1016,30 @@
 
       document.getElementById("sberna-mista").innerHTML = howtoTemplate;
 
-      var template = `<option selected disabled value="">Vyberte místo předání</option>`;
+      var templateRequest = `<option selected disabled value="">Vyberte místo převzetí</option><option value="personal">Osobní převzetí</option>`;
+      var templateOffer = `<option selected disabled value="">Vyberte místo předání</option><option>Osobní předání</option>`;
       data.forEach((row, i) => {
-        template += `<option>${row.nazev} (${row.otevreno})</option>`;
+        var option = `<option>${row.nazev} ${ row.otevreno ? "(" + row.otevreno + ")" : ""}</option>`;
+        templateRequest += option;
+        templateOffer += option;
       })
 
-      document.getElementById("misto").innerHTML = template;
+      document.getElementById("request-misto").innerHTML = templateRequest;
+      document.getElementById("misto").innerHTML = templateOffer;
 
+    }
+
+    function test(select) {
+      var myCollapse = document.getElementById('adresa-wrapper');
+      var show = false;
+      if(select.value == "personal") {
+        show = true;
+      } else {
+        show = false;
+      }
+      var bsCollapse = new bootstrap.Collapse(myCollapse, {
+          show: show
+        })
     }
 
     function showRequests(data) {
