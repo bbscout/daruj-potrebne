@@ -219,6 +219,9 @@
         <img src="https://cdn.jsdelivr.net/gh/bbscout/daruj-potrebne@main/img/pozadi-ukrajina.jpg" class="img-fluid"
           alt="snímek vytištěné metodiky">
         <h1 data-i18n-key="heading-1" class="text-primary">Pro Ukrajinu</h1>
+        <p>Kde pomáháme: <a id="map-toggle" data-bs-toggle="collapse" href="#map" aria-expanded="false"
+            aria-controls="map" class="link-secondary details collapsed" data-i18n-key="map"><?= details.placeOfHelp ?> (zobrazit na mapě)</a></p>
+          <iframe class="collapse" id="map" style="border:none;" src="https://frame.mapy.cz/zakladni?x=12.8733078&y=49.4627676&z=11&q=<?= details.mapLocation ?>&source=area" width="100%" height="350px" frameborder="0"></iframe>
         <h2 data-i18n-key="heading-2-request">Hledám pomoc</h2>
         <p data-i18n-key="heading-2-request-desc" class="mb-3">
           Jste v nouzi, potřebujete pomoct? Chybí vám oblečení, vybavení domácnosti nebo jiné zařízení?
@@ -258,7 +261,7 @@
                 pomoc?</a>
             </p>
 
-            <div class="collapse mb-3" id="collapse-nabidka">
+            <div class="collapse mb-3 multiple-collapse-nabidka" id="collapse-nabidka">
               <div class="accordion" id="accordion-nabidka">
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="accordion-nabidka-1-heading">
@@ -333,7 +336,7 @@
                       4 | Předání věcí
                     </button>
                   </h2>
-                  <div id="accordion-nabidka-4" class="accordion-collapse collapse"
+                  <div id="accordion-nabidka-4" class="accordion-collapse collapse multiple-collapse-nabidka"
                     aria-labelledby="accordion-nabidka-4-heading" data-bs-parent="#accordion-nabidka">
                     <div class="accordion-body">
                       <p data-i18n-key="request-howto-4-content-1">
@@ -347,6 +350,11 @@
                           <li data-i18n-key="request-howto-4-content-5">Potřebné věci Vám v pátek odpoledne odvezou skauti ze sběrného místa.</li>
                         </ul>
                       </ul>
+                      <p data-i18n-key="request-howto-4-content-6">
+                        <strong>SBĚRNÁ MÍSTA:</strong>
+                      </p>
+                      <div id="request-sberna-mista">
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -394,12 +402,12 @@
               </div>
               <div class="row">
                 <div class="col-12 mb-3">
-                  <label for="request-misto" class="form-label" data-i18n-key="offer-form-place"><i class="bi bi-house"></i> Způsob převzetí*</label>
+                  <label for="request-misto" class="form-label" data-i18n-key="request-form-place"><i class="bi bi-house"></i> Způsob převzetí* <a href="#accordion-nabidka-4" data-bs-toggle="collapse" data-bs-target=".multiple-collapse-nabidka" aria-expanded="false" aria-controls="collapse-nabidka accordion-nabidka-4"><i class="bi bi-question-lg"></i></a></label>
                   <select onchange="test(this)" class="form-select no-validate" aria-label="výběr místa" id="request-misto" required>
                     <option disabled data-i18n-key="offer-form-place-defoption">Ups... tady chybí nějaké možnosti</option>
                   </select>
-                  <div class="invalid-feedback" data-i18n-key="offer-form-place-feedback">
-                    Prosíme, vyberte způsob, jakým předáte vybrané vybavení.
+                  <div class="invalid-feedback" data-i18n-key="request-form-place-feedback">
+                    Prosíme, vyberte způsob, jakým převezmete vybrané vybavení.
                   </div>
                 </div>
               </div>
@@ -536,7 +544,7 @@
                       <p data-i18n-key="offer-howto-3-content-5">
                         <strong>SBĚRNÁ MÍSTA:</strong>
                       </p>
-                      <div id="sberna-mista">
+                      <div id="offer-sberna-mista">
                       </div>
                     </div>
                   </div>
@@ -604,7 +612,7 @@
               </div>
               <div class="row">
                 <div class="col-12 mb-3">
-                  <label for="misto" class="form-label" data-i18n-key="offer-form-place"><i class="bi bi-house"></i> Způsob předání* <a href="#accordion-poptavka-3" data-bs-toggle="collapse" data-bs-target=".multiple-collapse-poptavka" aria-expanded="false" aria-controls="collapse-poptavka accordion-nabidka-3" data-i18n-key="offer-howto-3-button"><i class="bi bi-question-lg"></i></a></label>
+                  <label for="misto" class="form-label" data-i18n-key="offer-form-place"><i class="bi bi-house"></i> Způsob předání* <a href="#accordion-poptavka-3" data-bs-toggle="collapse" data-bs-target=".multiple-collapse-poptavka" aria-expanded="false" aria-controls="collapse-poptavka accordion-nabidka-3"><i class="bi bi-question-lg"></i></a></label>
                   <select class="form-select no-validate" aria-label="výběr místa" name="misto" id="misto" required>
                     <option disabled data-i18n-key="offer-form-place-defoption">Ups... tady chybí nějaké možnosti</option>
                   </select>
@@ -651,10 +659,10 @@
       </div>
       <div class="col-md-10 offset-md-1 text-center mt-3">
         <p>
-          <a data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
-            aria-controls="collapseExample" class="link-secondary" data-i18n-key="about-project"> více o projektu</a>
+          <a data-bs-toggle="collapse" href="#about-project" role="button" aria-expanded="false"
+            aria-controls="about-project" class="link-secondary" data-i18n-key="about-project"> více o projektu</a>
         </p>
-        <div class="collapse " id="collapseExample">
+        <div class="collapse " id="about-project">
           <div class="card card-body mb-5">
             <p class="text-left mb-0" data-i18n-key="about-project-detail-1"><small>
                 Když jsme se rozhodovali, jak se zapojit do pomoci Ukrajině, tak byla materiální sbírka jedním z
@@ -966,6 +974,10 @@
       translateAll();
     });
 
+    document.getElementById("map").addEventListener("shown.bs.collapse", () => {
+      document.getElementById('map').src += '';
+    })
+
     function translateAll() {
       locale = document.forms["lang-selection"].langSel.value;
       document
@@ -1014,7 +1026,8 @@
         </p>`;
       })
 
-      document.getElementById("sberna-mista").innerHTML = howtoTemplate;
+      document.getElementById("request-sberna-mista").innerHTML = howtoTemplate;
+      document.getElementById("offer-sberna-mista").innerHTML = howtoTemplate;
 
       var templateRequest = `<option selected disabled value="">Vyberte místo převzetí</option><option value="personal">Osobní převzetí</option>`;
       var templateOffer = `<option selected disabled value="">Vyberte místo předání</option><option>Osobní předání</option>`;
@@ -1030,16 +1043,20 @@
     }
 
     function test(select) {
-      var myCollapse = document.getElementById('adresa-wrapper');
-      var show = false;
+      console.log(select.value);
+      var wrapper = document.getElementById('adresa-wrapper');
+      var bsWrapper = new bootstrap.Collapse(wrapper, {
+        toggle: false
+      })
+      var val = "";
       if(select.value == "personal") {
-        show = true;
+        bsWrapper.show();
+
       } else {
-        show = false;
+        bsWrapper.hide();
+        val = select.options[select.selectedIndex].text;
       }
-      var bsCollapse = new bootstrap.Collapse(myCollapse, {
-          show: show
-        })
+      document.getElementById('adresa').value = val;
     }
 
     function showRequests(data) {

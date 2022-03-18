@@ -1,9 +1,15 @@
 GOOGLE_SHEET_ID = "ID_GOOGLE_TABULKY"; //DOPLŇ UNIKÁTNÍ ID GOOGLE TABULKY (ta část URL mezi "d/" a "/edit" -> ".../d/{ID_TABULKY}/edit...")
 
+WEB_DETAILS = {
+  placeOfHelp: "Domažlice a okolí",
+  mapLocation: "orp Domažlice"
+}
+
 PLACES_SHEET = "Sběrná místa";
 PLACES_FIELDS = [
-  { name: "Adresa místa", key: "adresa" },
-  { name: "Otevírací doba", key: "otevreno" }
+  { name: "Název místa", key: "nazev" },
+  { name: "Otevírací doba", key: "otevreno" },
+  { name: "Adresa", key: "adresa" }
 ]
 
 
@@ -48,6 +54,7 @@ EMAIL_DETAILS = {
 
 function doGet() {
   var template = HtmlService.createTemplateFromFile(`index.html`);
+  template.details = WEB_DETAILS;
   return template.evaluate().setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
 }
 
@@ -171,13 +178,14 @@ function getRequests() {
   reservationIndex = keys.indexOf('rezervace');
   solvedIndex = keys.indexOf('predano');
   idIndex = keys.indexOf('id');
+  addressIndex = keys.indexOf('adresa');
 
   var requests = values.filter(row => {
     return !row[solvedIndex]
   })
 
   requests = requests.map(row => {
-    return { "id": row[idIndex], "vec": row[thingIndex], "rezervace": row[reservationIndex] }
+    return { "id": row[idIndex], "vec": row[thingIndex], "rezervace": row[reservationIndex], "adresa": row[addressIndex] }
   })
 
 
