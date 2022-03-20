@@ -2,7 +2,12 @@ GOOGLE_SHEET_ID = "ID_GOOGLE_TABULKY"; //DOPLŇ UNIKÁTNÍ ID GOOGLE TABULKY (ta
 
 WEB_DETAILS = {
   placeOfHelp: "Domažlice a okolí",
-  mapLocation: "orp Domažlice"
+  mapLocation: "orp Domažlice",
+  linkToForm: "https://sjp.skauting.cz/pomahame-ukrajine/",
+  name: "Junák – český skaut, středisko Jiřinky Paroubkové Domažlice, z. s.",
+  address: "Zahradní 518\nDomažlice\n344 01", //\n slouží k zalomení řádku
+  email: "pomoc.uk@skaut.cz",
+  phone: "123"
 }
 
 PLACES_SHEET = "Sběrná místa";
@@ -42,14 +47,6 @@ OFFERS_FIELDS = [
   { name: "Email", key: "email" },
   { name: "Poznámka", key: "poznamka" }
 ];
-
-EMAIL_DETAILS = {
-  linkToForm: "https://sjp.skauting.cz/pomahame-ukrajine/",
-  name: "Junák – český skaut, středisko Jiřinky Paroubkové Domažlice, z. s.",
-  address: "Zahradní 518\nDomažlice\n344 01", //\n slouží k zalomení řádku
-  email: "pomoc.uk@skaut.cz",
-  phone: "123"
-}
 
 
 function doGet() {
@@ -123,8 +120,9 @@ function addOffer(data) {
   var body = requestsToPlainText(offers, requests);
 
   var htmlTemplate = HtmlService.createTemplateFromFile('offerEmailTemplate');  
-  htmlTemplate.details = EMAIL_DETAILS;
+  htmlTemplate.details = WEB_DETAILS;
   htmlTemplate.offers = offers[0];
+  htmlTemplate.personalDelivery = offers[0].misto == "Osobní předání";
   htmlTemplate.requests = requests;
   var htmlBody = htmlTemplate.evaluate().getContent();
 
@@ -252,10 +250,10 @@ Poznámka: ${offer.poznamka}
 Detaily k vybraným poptávkám:
 ----------
 ${requestsList}
-${ EMAIL_DETAILS.name ? EMAIL_DETAILS.name : "" }
-${ EMAIL_DETAILS.address ? EMAIL_DETAILS.address : "" }
-${ EMAIL_DETAILS.email ? "email: " + EMAIL_DETAILS.email : "" }
-${ EMAIL_DETAILS.phone ? "telefon: " + EMAIL_DETAILS.phone : "" }`;
+${ WEB_DETAILS.name ? WEB_DETAILS.name : "" }
+${ WEB_DETAILS.address ? WEB_DETAILS.address : "" }
+${ WEB_DETAILS.email ? "email: " + WEB_DETAILS.email : "" }
+${ WEB_DETAILS.phone ? "telefon: " + WEB_DETAILS.phone : "" }`;
 
 return body
 }

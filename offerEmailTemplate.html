@@ -538,15 +538,40 @@
                                         line-height: 1.5;
                                       ">
                                     <p style="margin: 0; font-size: 14px">
+                                      <? if (personalDelivery) {?>
+                                      Zvolili jste si jako způsob doručení <strong>osobní předání</strong>. Prohlédněte si prosím
+                                      adresu / místo dodání u každé poptávky (viz níže "Detaily k vybraným poptávkám") a
                                       <strong
-                                          >Kontaktujte prosím
+                                          >kontaktujte
                                           poptávajícího</strong>
-                                      nejlépe na zadaném telefonním čísle
-                                      (případně emailu) o způsobu doručení
-                                      daných věcí. Pokud poptávající neuvedl
-                                      žádný kontakt, zkuste vybranou věc
-                                      předat na místo určení. Pro překlad zprávy do ukrajinského jazyka můžete použít například <a href="https://translate.google.com/?sl=cs&tl=uk&op=translate" target="_blank">Google překladač</a>. V případě
-                                      problémů nás kontaktujte.
+                                      na zadaném telefonním čísle nebo emailu o způsobu doručení.
+                                      <ul>
+                                      <li>Pokud si zvolil poptávající předání na sběrném místě, informujte ho prosím o tom, kdy na sběrné místo
+                                      požadované věci dodáte. Všechny věci následně označte čitelně a trvanlivě jménem a příjmením poptávajícího.</li>
+                                    </ul>
+                                      <? } else {?>
+                                      Zvolili jste si jako způsob doručení <strong>předání na sběrném místě</strong>.
+                                      Prohlédněte si prosím
+                                      adresu / místo dodání u každé poptávky (viz níže "Detaily k vybraným poptávkám"):
+                                    <ul>
+                                      <li>Pokud si zvolil poptávající
+                                        předání na shodném <strong>sběrném místě</strong>, informujte ho prosím na zadaném telefonním čísle nebo emailu o tom, kdy na sběrné
+                                        místo požadované věci dodáte. Všechny věci následně označte čitelně a trvanlivě jménem a příjmením poptávajícího.</li>
+                                      <li>Pokud si zvolil poptávající
+                                        předání <strong>na jiném místě</strong>, informujte nás prosím na
+                                        emailu <a href="mailto:<?= details.email ?>">
+                                          <?= details.email ?>
+                                        </a> o tom, kdy na sběrné
+                                        místo požadované věci dodáte. Všechny věci následně označte čitelně a trvanlivě jménem a příjmením poptávajícího. Vše ideálně předejte do pátku do 14:00 na sběrné místo. My následně zajistíme předání za vás.</li>
+                                    </ul>
+                                    <? } ?>
+                                     Pro překlad zprávy do
+                                      ukrajinského jazyka můžete použít například <a
+                                        href="https://translate.google.com/?sl=cs&tl=uk&op=translate"
+                                        target="_blank">Google překladač</a>. V případě problémů nás kontaktujte na
+                                      emailu <a href="mailto:<?= details.email ?>">
+                                        <?= details.email ?>
+                                      </a>.
                                     </p>
                                   </div>
                                 </div>
@@ -607,6 +632,7 @@
               </tr>
             </tbody>
           </table>
+          <? if (personalDelivery) {?>
           <table align="center" border="0" cellpadding="0" cellspacing="0" class="row row-6" role="presentation" style="
                 mso-table-lspace: 0pt;
                 mso-table-rspace: 0pt;
@@ -656,9 +682,12 @@
                                         line-height: 1.5;
                                       ">
                                     <p style="margin: 0; font-size: 14px">
-                                      Pokud jste jako způsob předání zvolili "osobní předání", pak považujeme tuto
-                                      poptávku za uzavřenou. <strong>Pokud by k předání nedošlo, kontaktujte nás prosím</strong> na níže
-                                      uvedeném emailu nebo telefonním čísle.
+                                      Vzhledem k tomu, že jste jako způsob předání zvolili <strong>osobní předání</strong>,
+                                      považujeme tuto
+                                      poptávku za uzavřenou.
+                                      <strong>Pokud by k předání nedošlo, kontaktujte nás prosím</strong> na emailu <a href="mailto:<?= details.email ?>">
+                                        <?= details.email ?>
+                                      </a>.
                                     </p>
                                   </div>
                                 </div>
@@ -673,6 +702,7 @@
               </tr>
             </tbody>
           </table>
+          <? }?>
           <table align="center" border="0" cellpadding="0" cellspacing="0" class="row row-7" role="presentation" style="
                 mso-table-lspace: 0pt;
                 mso-table-rspace: 0pt;
@@ -835,7 +865,8 @@
                                             font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
                                           ">
                                     <p style="margin: 0; font-size: 14px">Příjmení:
-                                      <strong><?= offers.prijmeni ?></strong></p>
+                                      <strong><?= offers.prijmeni ?></strong>
+                                    </p>
                                   </div>
                                 </div>
                               </td>
@@ -854,7 +885,8 @@
                                             font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
                                           ">
                                     <p style="margin: 0; font-size: 14px">Způsob předání:
-                                      <strong><?= offers.misto ?></strong></p>
+                                      <strong><?= offers.misto ?></strong>
+                                    </p>
                                   </div>
                                 </div>
                               </td>
@@ -873,7 +905,8 @@
                                             font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
                                           ">
                                     <p style="margin: 0; font-size: 14px">Telefon:
-                                      <strong><?= offers.telefon.replace("'","") ?></strong></p>
+                                      <strong><?= offers.telefon.replace("'","") ?></strong>
+                                    </p>
                                   </div>
                                 </div>
                               </td>
@@ -911,7 +944,8 @@
                                             font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
                                           ">
                                     <p style="margin: 0; font-size: 14px">Poznámka:
-                                      <strong><?= offers.poznamka ?></strong></p>
+                                      <strong><?= offers.poznamka ?></strong>
+                                    </p>
                                   </div>
                                 </div>
                               </td>
@@ -1025,7 +1059,8 @@
                                             font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
                                           ">
                                     <p style="margin: 0; font-size: 14px">Příjmení:
-                                      <strong><?= request.prijmeni ?></strong></p>
+                                      <strong><?= request.prijmeni ?></strong>
+                                    </p>
                                   </div>
                                 </div>
                               </td>
@@ -1044,7 +1079,8 @@
                                             font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
                                           ">
                                     <p style="margin: 0; font-size: 14px">Adresa / místo dodání:
-                                      <strong><?= request.adresa ?></strong></p>
+                                      <strong><?= request.adresa ?></strong>
+                                    </p>
                                   </div>
                                 </div>
                               </td>
@@ -1063,7 +1099,8 @@
                                             font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
                                           ">
                                     <p style="margin: 0; font-size: 14px">Telefon:
-                                      <strong><?= request.telefon ?></strong></p>
+                                      <strong><?= request.telefon ?></strong>
+                                    </p>
                                   </div>
                                 </div>
                               </td>
@@ -1101,7 +1138,8 @@
                                             font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
                                           ">
                                     <p style="margin: 0; font-size: 14px">Poznámka:
-                                      <strong><?= request.poznamka ?></strong></p>
+                                      <strong><?= request.poznamka ?></strong>
+                                    </p>
                                   </div>
                                 </div>
                               </td>
