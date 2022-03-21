@@ -48,6 +48,12 @@ OFFERS_FIELDS = [
   { name: "Poznámka", key: "poznamka" }
 ];
 
+SUBSCRIBERS_SHEET = "Emailové notifikace";
+SUBSCRIBERS_FIELDS = [
+  { name: "Email", key: "email" },
+  { name: "Zasílat notifikace", key: "aktivni" }
+]
+
 
 function doGet() {
   var template = HtmlService.createTemplateFromFile(`index.html`);
@@ -73,6 +79,12 @@ function init() {
   if (!places) {
     places = ss.insertSheet(PLACES_SHEET);
     places.appendRow(PLACES_FIELDS.map(field => field.name));
+  }
+
+  var subscribers = ss.getSheetByName(SUBSCRIBERS_SHEET);
+  if (!subscribers) {
+    subscribers = ss.insertSheet(SUBSCRIBERS_SHEET);
+    subscribers.appendRow(SUBSCRIBERS_FIELDS.map(field => field.name));
   }
 }
 
@@ -107,8 +119,66 @@ function appendData(data, sheetName, fields) {
 }
 
 function addRequest(data) {
-  appendData(data,REQUESTS_SHEET,REQUESTS_FIELDS);
+  var requests = appendData(data,REQUESTS_SHEET,REQUESTS_FIELDS);
+
+  
+  var htmlTemplate = HtmlService.createTemplateFromFile('subscribersEmailTemplate');  
+  htmlTemplate.details = WEB_DETAILS;
+  htmlTemplate.requests = requests;
+  var htmlBody = htmlTemplate.evaluate().getContent();
+
+  GmailApp.sendEmail(null,"PRO UKRAJINU: Nová poptávka", "test", {
+    htmlBody: htmlBody,
+    bcc: getSubscribers()
+  });
+
   return true
+}
+
+function getSubscribers() {
+  var ss = SpreadsheetApp.openById(GOOGLE_SHEET_ID);
+  var sheet = ss.getSheetByName(SUBSCRIBERS_SHEET);
+
+  if (!sheet) {
+    init();
+    sheet = ss.getSheetByName(SUBSCRIBERS_SHEET);
+  }
+
+  var dataRange = sheet.getDataRange();
+  var values = dataRange.getValues();
+  values.shift();
+
+  var keys = SUBSCRIBERS_FIELDS.map(field => field.key);
+  emailIndex = keys.indexOf('email');
+  activeIndex = keys.indexOf('aktivni');
+
+  var subscribers = [];
+  values.forEach(el => {
+    if(el[activeIndex]) {
+      subscribers.push(el[emailIndex]);
+    }
+  })
+
+  return subscribers.join(",");
+
+}
+
+function addSubscriber(email) {
+  var ss = SpreadsheetApp.openById(GOOGLE_SHEET_ID);
+  var sheet = ss.getSheetByName(SUBSCRIBERS_SHEET);
+
+  if (!sheet) {
+    init();
+    sheet = ss.getSheetByName(SUBSCRIBERS_SHEET);
+  }
+
+  var row = {
+    email: email,
+    aktivni: true
+  } 
+
+  sheet.appendRow(SUBSCRIBERS_FIELDS.map(field => row[field.key]))
+
 }
 
 function addOffer(data) {
@@ -129,6 +199,10 @@ function addOffer(data) {
   GmailApp.sendEmail(offers[0].email,"PRO UKRAJINU: Detaily k vybraným poptávkám", body, {
     htmlBody: htmlBody
   });
+
+  if(offers[0].notifikace) {
+    addSubscriber(offers[0].email);
+  }
 
   return true
 }
