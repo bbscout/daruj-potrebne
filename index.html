@@ -278,10 +278,10 @@
                           <li data-i18n-key="request-howto-1-content-2">Jméno</li>
                           <li data-i18n-key="request-howto-1-content-3">Příjmení</li>
                           <li data-i18n-key="request-howto-1-content-4">Místo doručení</li>
+                          <li data-i18n-key="request-howto-1-content-6">Telefon nebo email</li>
                         </strong>
                       </ul>
-                      <p data-i18n-key="request-howto-1-content-5">Pokud zadáte <strong>email</strong>, přijde Vám potvrzení, jakmile někdo na Vaši poptávku
-                        zareaguje. Pokud zadáte <strong>telefon</strong>, usnadníte tak kontakt osobě, která vám danou
+                      <p data-i18n-key="request-howto-1-content-5">Zadáním <strong>telefonu</strong> nebo <strong>emailu</strong>, usnadníte kontakt osobě, která vám danou
                         věc nabídne.</p>
                     </div>
                   </div>
@@ -384,19 +384,19 @@
               <div class="row">
                 <div class="col-md-6 col-sm-12 mb-3">
                   <label for="email" class="form-label" data-i18n-key="request-form-email"><i class="bi bi-envelope"></i> Email</label>
-                  <input type="email" class="form-control no-validate" name="email" id="email"
-                    placeholder="vas@email.cz">
+                  <input type="email" class="form-control no-validate" name="email" id="request-email"
+                    placeholder="vas@email.cz" onblur="validateOneOfTwo()">
                   <div class="invalid-feedback" data-i18n-key="request-form-email-feedback">
-                    Prosíme, vložte emailovou adresu, ať vás můžeme kontaktovat.
+                    Prosíme, vyplňte email nebo telefon, ať vás můžeme kontaktovat.
                   </div>
                 </div>
 
                 <div class="col-md-6 col-sm-12 mb-3">
                   <label for="telefon" class="form-label" data-i18n-key="request-form-phone"><i class="bi bi-phone"></i> Telefon</label>
-                  <input type="text" class="form-control no-validate" name="telefon" id="telefon"
-                    placeholder="+420 123 456 789">
+                  <input type="text" class="form-control no-validate" name="telefon" id="request-telefon"
+                    placeholder="+420 123 456 789" onblur="validateOneOfTwo()">
                   <div class="invalid-feedback" data-i18n-key="request-form-phone-feedback">
-                    Prosíme, vložte váš telefon, ať vás můžeme kontaktovat.
+                    Prosíme, vyplňte email nebo telefon, ať vás můžeme kontaktovat.
                   </div>
                 </div>
               </div>
@@ -744,9 +744,9 @@
         "request-form-lastname": "<i class=\"bi bi-person\"></i> Příjmení*",
         "request-form-lastname-feedback": " Prosíme, vyplňte vaše příjmení. ",
         "request-form-email": "<i class=\"bi bi-envelope\"></i> Email",
-        "request-form-email-feedback": " Prosíme, vložte emailovou adresu, ať vás můžeme kontaktovat. ",
+        "request-form-email-feedback": "Prosíme, vyplňte email nebo telefon, ať vás můžeme kontaktovat.",
         "request-form-phone": "<i class=\"bi bi-phone\"></i> Telefon",
-        "request-form-phone-feedback": " Prosíme, vložte váš telefon, ať vás můžeme kontaktovat. ",
+        "request-form-phone-feedback": "Prosíme, vyplňte email nebo telefon, ať vás můžeme kontaktovat.",
         "request-form-address": "<i class=\"bi bi-house\"></i> Adresa doručení*",
         "request-form-address-feedback": " Prosíme, vyplňte adresu nebo místo, kde vám předáme potřebné vybavení. ",
         "request-form-note": "<i class=\"bi bi-pencil\"></i> Poznámka",
@@ -976,7 +976,7 @@
 
     document.getElementById("map").addEventListener("shown.bs.collapse", () => {
       document.getElementById('map').src += '';
-    })
+    });
 
     function translateAll() {
       locale = document.forms["lang-selection"].langSel.value;
@@ -1088,11 +1088,26 @@
       document.getElementById("dalsi-veci").appendChild(el);
     }
 
+    function validateOneOfTwo() {
+      var requestFormEmail = document.getElementById('request-email');
+        var requestFormPhone = document.getElementById('request-telefon')
+        if(!requestFormEmail.value && !requestFormPhone.value) {
+          requestFormEmail.setCustomValidity("invalid");
+          requestFormPhone.setCustomValidity("invalid");
+        } else {
+          requestFormEmail.setCustomValidity("");
+          requestFormPhone.setCustomValidity("");
+        }
+    }
+
     function send(formId) {
       var form = document.getElementById(formId);
 
       if (!form.checkValidity()) {
         form.classList.add('was-validated')
+        
+        validateOneOfTwo();
+        
         return
       }
       var formData = new FormData(form);
