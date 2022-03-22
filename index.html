@@ -805,8 +805,10 @@
         "about-project-detail-1": "<small> Když jsme se rozhodovali, jak se zapojit do pomoci Ukrajině, tak byla materiální sbírka jedním z prvních nápadů. Jenže taková sbírka je jednak logisticky velmi náročná a jednak často pomůže lidem v dobré víře darovat věci, které už nechtějí, ale které taky nikomu nepomohou. Naším cílem bylo vytvořit sbírku, která cíleně pomůže lidem v nouzi najít to, co skutečně potřebují. </small>",
         "about-project-detail-2": "<small> Pojďme to společně zkusit 💗. </small>",
         "support": "<small>Za podpory:</small>",
-        "cookies": "<small>Váš prohlížeč může ukládat tzv. <a href=\"https://cs.wikipedia.org/wiki/HTTP_cookie\" class=\"link-secondary\" target=\"_blank\">cookies</a> soubory, nicméně tento web s nimi nijak aktivně nepracuje.</small>",
-        "created-by": "<small>S 💙💛 vytvořili <a href=\"https://ctverak.cz\" target=\"_blank\" class=\"link-secondary\">Martin</a> a <a href=\"https://atelierkrejsa.cz\" target=\"_blank\" class=\"link-secondary\">Břéťa</a> © 2022</small>"
+        "request-option-personal": "Osobní převzetí",
+        "request-option-default": "Vyberte místo převzetí",
+        "offer-option-personal": "Osobní předání",
+        "offer-option-default": "Vyberte místo předání",
       },
       "uk": {
         "heading-1": "Для України",
@@ -897,6 +899,10 @@
         "about-project-detail-1": "<small> Коли ми вирішили залучити за допомогою України, матеріальна колекція була однією з перших ідей. Але ця колекція як логістично дуже вимоглива, і часто допомагає людям добросовісно, ​​щоб пожертвувати речі, які більше не хочуть, але це також не допомагає нікому. Наша мета полягала у створенні колекції, яка допомагає людям, необхідним знайти те, що їм дійсно потрібно. </small>",
         "about-project-detail-2": "<small> Давайте спробуємо це разом 💗. </small>",
         "support": "<small> Для підтримки: </small>",
+        "request-option-personal": "Особистий самовивіз",
+        "request-option-default": "Виберіть місце отримання",
+        "offer-option-personal": "Особиста передача",
+        "offer-option-default": "Виберіть місце доставки",
       },
       "en": {
         "heading-1": "For Ukraine",
@@ -987,6 +993,10 @@
         "about-project-detail-1": "<small>When we were deciding how to get involved in helping Ukraine, a material collection was one of the first ideas. But a material collection is both logistically very demanding and often helps people in good faith to donate things they don't want anymore, but which also don't help anyone. Our goal was to create a collection that would specifically help people in need find what they really need.</small>",
         "about-project-detail-2": "<small> Let's try it together 💗. </small>",
         "support": "<small>With support of: </small>",
+        "request-option-personal": "Personal pickup",
+        "request-option-default": "Select a pick-up location",
+        "offer-option-personal": "Personal handover",
+        "offer-option-default": "Select the place of delivery",
       },
     };
 
@@ -1050,8 +1060,8 @@
       document.getElementById("request-sberna-mista").innerHTML = howtoTemplate;
       document.getElementById("offer-sberna-mista").innerHTML = howtoTemplate;
 
-      var templateRequest = `<option selected disabled value="">Vyberte místo převzetí</option><option value="personal">Osobní převzetí</option>`;
-      var templateOffer = `<option selected disabled value="">Vyberte místo předání</option><option>Osobní předání</option>`;
+      var templateRequest = `<option selected disabled value="" data-i18n-key="request-option-default">Vyberte místo převzetí</option><option value="personal" data-i18n-key="request-option-personal">Osobní převzetí</option>`;
+      var templateOffer = `<option selected disabled value="" data-i18n-key="offer-option-default">Vyberte místo předání</option><option data-i18n-key="offer-option-personal">Osobní předání</option>`;
       data.forEach((row, i) => {
         var option = `<option>${row.nazev} ${ row.otevreno ? "(" + row.otevreno + ")" : ""}</option>`;
         templateRequest += option;
