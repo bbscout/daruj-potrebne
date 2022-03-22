@@ -188,13 +188,14 @@ function addOffer(data) {
 
   var requestIds = offers.map(el => el.nabidka);
   var requests = returnRequestsByIds(requestIds);
+  var deliveryTranslations = ["Osobní předání","Особиста передача","Personal handover"];
 
   var body = requestsToPlainText(offers, requests);
 
   var htmlTemplate = HtmlService.createTemplateFromFile('offerEmailTemplate');  
   htmlTemplate.details = WEB_DETAILS;
   htmlTemplate.offers = offers[0];
-  htmlTemplate.personalDelivery = offers[0].misto == "Osobní předání";
+  htmlTemplate.personalDelivery = deliveryTranslations.includes(offers[0].misto);
   htmlTemplate.requests = requests;
   var htmlBody = htmlTemplate.evaluate().getContent();
 
