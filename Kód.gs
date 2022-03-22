@@ -159,7 +159,9 @@ function getSubscribers() {
     }
   })
 
-  return subscribers.join(",");
+  return subscribers.filter((value, index, self) => {
+    return self.indexOf(value) === index;
+  }).join(",");
 
 }
 
